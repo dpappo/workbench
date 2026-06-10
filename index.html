@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stud-Anchored Workbench — 3D Build Guide</title>
+<style>
+  :root { --accent:#e8762d; --bg:#1d2125; --panel:#272c31; --text:#e9e4da; --muted:#9aa3ab; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; overflow:hidden; background:var(--bg); color:var(--text);
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  #scene { position:absolute; inset:0; }
+  #hud { position:absolute; left:0; right:0; bottom:0; padding:14px 18px 18px;
+    background:linear-gradient(transparent, rgba(20,23,26,.94) 26%); pointer-events:none; }
+  #hud .inner { max-width:920px; margin:0 auto; pointer-events:auto; }
+  #stepTitle { font-size:18px; font-weight:700; margin-bottom:5px; }
+  #stepTitle span.num { color:var(--accent); }
+  #stepCaption { font-size:13.5px; line-height:1.5; color:var(--text); max-height:168px;
+    overflow-y:auto; padding-right:8px; }
+  #stepCaption p { margin-bottom:7px; }
+  #stepCaption b { color:#fff; }
+  #stepCaption .why { color:var(--muted); font-style:italic; }
+  #stepCaption ul { margin:4px 0 7px 18px; }
+  #stepCaption li { margin-bottom:2px; }
+  #controls { display:flex; align-items:center; gap:10px; margin-top:10px; flex-wrap:wrap; }
+  button { background:var(--panel); color:var(--text); border:1px solid #3a4148; border-radius:8px;
+    padding:9px 16px; font-size:14px; cursor:pointer; }
+  button:hover { border-color:var(--accent); }
+  button.primary { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  #dots { display:flex; gap:4px; flex-wrap:wrap; }
+  .dot { width:20px; height:20px; border-radius:6px; background:var(--panel); border:1px solid #3a4148;
+    font-size:10px; color:var(--muted); display:flex; align-items:center; justify-content:center; cursor:pointer; }
+  .dot.done { color:var(--text); border-color:#566069; }
+  .dot.active { background:var(--accent); color:#fff; border-color:var(--accent); font-weight:700; }
+  #legend { position:absolute; top:14px; right:14px; background:rgba(39,44,49,.88); border:1px solid #3a4148;
+    border-radius:10px; padding:10px 12px; font-size:12px; color:var(--muted); line-height:1.7; }
+  #legend i { display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:7px; vertical-align:-1px; }
+  #title { position:absolute; top:14px; left:16px; font-size:14px; color:var(--muted); }
+  #title b { color:var(--text); }
+  #hint { position:absolute; top:38px; left:16px; font-size:12px; color:#6e7780; }
+  #tabs { position:absolute; top:60px; left:16px; display:flex; gap:6px; z-index:20; }
+  #tabs .tab { background:var(--panel); border:1px solid #3a4148; color:var(--muted);
+    border-radius:8px; padding:7px 14px; font-size:13px; cursor:pointer; }
+  #tabs .tab.active { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  #cuts { position:absolute; inset:0; background:var(--bg); z-index:10; display:none;
+    overflow-y:auto; padding:104px 18px 40px; }
+  #cuts .inner { max-width:1000px; margin:0 auto; }
+  #cuts h2 { font-size:17px; margin:26px 0 4px; }
+  #cuts h2:first-child { margin-top:0; }
+  #cuts p.note { font-size:13px; color:var(--muted); line-height:1.5; margin-bottom:12px; }
+  #cuts .card { background:var(--panel); border:1px solid #343b42; border-radius:12px;
+    padding:14px; margin-bottom:14px; overflow-x:auto; }
+  #cuts svg { display:block; }
+  #cuts .rules { background:rgba(232,118,45,.08); border:1px solid rgba(232,118,45,.35);
+    border-radius:12px; padding:12px 16px; font-size:13px; line-height:1.6; color:var(--text); margin-bottom:18px; }
+</style>
+</head>
+<body>
+<div id="scene"></div>
+<div id="title"><b>Stud-Anchored Workbench</b> — Complete Beginner's 3D Build Guide (60"W × 24"D × 36⅛"H, glue-free)</div>
+<div id="hint">Drag to orbit &nbsp;·&nbsp; Scroll/pinch to zoom &nbsp;·&nbsp; ←/→ keys to change step &nbsp;·&nbsp; scroll the text panel for full instructions</div>
+<div id="tabs">
+  <button class="tab active" id="tabBuild">Build steps (3D)</button>
+  <button class="tab" id="tabCuts">Cut plans</button>
+</div>
+<div id="cuts"><div class="inner" id="cutsInner"></div></div>
+<div id="legend">
+  <div><i style="background:#e8762d"></i>New this step</div>
+  <div><i style="background:#c9a36b"></i>2×4 framing</div>
+  <div><i style="background:#e3cf9e"></i>Plywood</div>
+  <div><i style="background:#7a553a"></i>Hardboard</div>
+  <div><i style="background:#f2f2ee"></i>Pegboard</div>
+  <div><i style="background:#5c666e"></i>Wall (existing studs)</div>
+</div>
+<div id="hud"><div class="inner">
+  <div id="stepTitle"></div>
+  <div id="stepCaption"></div>
+  <div id="controls">
+    <button id="prev">← Back</button>
+    <button id="next" class="primary">Next →</button>
+    <div id="dots"></div>
+  </div>
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ============================================================
+// All coordinates use the verified plan geometry, in inches.
+// x: width along the wall (0–60 = bench)
+// y: depth out from the wall face (0 = wall)
+// z: height off the floor
+// ============================================================
+
+const COL = {
+  framing: 0xc9a36b, framingDark: 0xb8905a, ply: 0xe3cf9e, hardboard: 0x7a553a,
+  pegboard: 0xf2f2ee, wall: 0x5c666e, floor: 0x33393f, line: 0xd94f30,
+  printer: 0x8d959c, stool: 0x6f7a83, lag: 0x474d53, highlight: 0xe8762d
+};
+
+// appear: first step shown (then stays).  only: shown ONLY on those steps.
+const PARTS = [
+  // layout lines
+  { b:[-4,-0.06,34.3, 68,0.12,0.4], c:COL.line, appear:5, only:[5,6] },
+  { b:[-4,-0.06,11.8, 68,0.12,0.4], c:COL.line, appear:6, only:[6] },
+  // ledger + cleat
+  { b:[0,0,31, 60,1.5,3.5],  c:COL.framing, appear:7 },
+  { b:[0,0,8.5, 60,1.5,3.5], c:COL.framing, appear:8 },
+  // Step 9 — doubling the beam: two single boards, the upper one lifted ("exploded") so you can see the stack
+  { b:[0,30,0, 60,3.5,1.5],   c:COL.framing, appear:9, only:[9] },
+  { b:[0,30,4.5, 60,3.5,1.5], c:COL.framing, appear:9, only:[9] },
+  // Step 10 — beam mated into one 3"-thick member (zigzag screws added below)
+  { b:[0,30,0, 60,3.5,3],   c:COL.framingDark, appear:10, only:[10,11] },
+  // Step 11 — rail and both legs doubled the same way
+  { b:[0,36,0, 60,3.5,3],   c:COL.framingDark, appear:11, only:[11] },
+  { b:[6,42,0, 34.5,3.5,3], c:COL.framingDark, appear:11, only:[11] },
+  { b:[6,48,0, 34.5,3.5,3], c:COL.framingDark, appear:11, only:[11] },
+  // goalpost staged forward
+  { b:[0,32,0, 3.5,3,34.5],    c:COL.framingDark, appear:12, only:[12] },
+  { b:[56.5,32,0, 3.5,3,34.5], c:COL.framingDark, appear:12, only:[12] },
+  { b:[0,35,31, 60,3,3.5],     c:COL.framingDark, appear:12, only:[12] },
+  // frame in final position
+  { b:[0,18,0, 3.5,3,34.5],    c:COL.framingDark, appear:13 },
+  { b:[56.5,18,0, 3.5,3,34.5], c:COL.framingDark, appear:13 },
+  { b:[0,21,31, 60,3,3.5],     c:COL.framingDark, appear:13 },
+  // spacer joists (ghost) during positioning + squaring
+  { b:[6,1.5,31, 1.5,19.5,3.5],    c:COL.framing, appear:13, only:[13,14], ghost:true },
+  { b:[52.5,1.5,31, 1.5,19.5,3.5], c:COL.framing, appear:13, only:[13,14], ghost:true },
+  // wall block, then kickers
+  { b:[50.5,0,5, 16,1.5,3.5], c:COL.framing, appear:15 },
+  { b:[3.5,0,5, 1.5,21,3.5],  c:COL.framing, appear:16 },
+  { b:[55,1.5,5, 1.5,21,3.5], c:COL.framing, appear:16 },
+  // rail, post
+  { b:[0,12,8.5, 60,3,3.5],       c:COL.framingDark, appear:17 },
+  { b:[28.5,11.75,0, 1.5,3.5,8.5], c:COL.framing, appear:18 },
+  // six top joists
+  { b:[4,1.5,31, 1.5,19.5,3.5],    c:COL.framing, appear:19 },
+  { b:[14,1.5,31, 1.5,19.5,3.5],   c:COL.framing, appear:19 },
+  { b:[24,1.5,31, 1.5,19.5,3.5],   c:COL.framing, appear:19 },
+  { b:[34,1.5,31, 1.5,19.5,3.5],   c:COL.framing, appear:19 },
+  { b:[44,1.5,31, 1.5,19.5,3.5],   c:COL.framing, appear:19 },
+  { b:[54.5,1.5,31, 1.5,19.5,3.5], c:COL.framing, appear:19 },
+  // shelf joists, deck
+  { b:[0,1.5,10.5, 3.5,10.5,1.5],      c:COL.framing, appear:20 },
+  { b:[34.125,1.5,10.5, 3.5,10.5,1.5], c:COL.framing, appear:20 },
+  { b:[56.5,1.5,10.5, 3.5,10.5,1.5],   c:COL.framing, appear:20 },
+  { b:[0,0,12, 35.875,15,0.75],      c:COL.ply, appear:21 },
+  { b:[35.875,0,12, 24.125,15,0.75], c:COL.ply, appear:21 },
+  // top layers, hardboard
+  { b:[0,0,34.5, 60,23.875,0.75],     c:COL.ply, appear:22 },
+  { b:[0,0.125,35.25, 60,23.875,0.75], c:COL.ply, appear:23 },
+  { b:[0,0,36, 48,24,0.125],          c:COL.hardboard, appear:24 },
+  { b:[48,0.125,36, 12,23.875,0.125], c:COL.hardboard, appear:24 },
+  // pegboard, printer
+  { b:[0,-0.25,40, 60,0.25,34], c:COL.pegboard, appear:25 },
+  { b:[45,4,36.125, 13,13,15],  c:COL.printer, appear:26 },
+  // stool for the seating check (step 3 only)
+  { b:[24,32,22.5, 14,14,1.5], c:COL.stool, appear:3, only:[3] },
+  { b:[29.75,37.75,0, 2.5,2.5,22.5], c:COL.stool, appear:3, only:[3] }
+];
+// lag-bolt heads on the ledger (two per stud at studs 4/20/36/52), appear with the ledger
+[4,20,36,52].forEach(cx => {
+  PARTS.push({ b:[cx-0.45,1.5,31.8, 0.9,0.55,0.9], c:COL.lag, appear:7 });
+  PARTS.push({ b:[cx-0.45,1.5,33.3, 0.9,0.55,0.9], c:COL.lag, appear:7 });
+});
+// zigzag lamination screws, drawn as dark heads on the staged parts.
+// Beam (step 10): every 8" along the 60" length, alternating near the two long edges.
+[4,12,20,28,36,44,52,58].forEach((sx,i) => {
+  PARTS.push({ b:[sx-0.3, 30 + (i%2 ? 0.7 : 2.5), 3.0, 0.6,0.6,0.35], c:COL.lag, appear:10, only:[10,11] });
+});
+// Rail (step 11): same zigzag.
+[4,12,20,28,36,44,52,58].forEach((sx,i) => {
+  PARTS.push({ b:[sx-0.3, 36 + (i%2 ? 0.7 : 2.5), 3.0, 0.6,0.6,0.35], c:COL.lag, appear:11, only:[11] });
+});
+// Legs (step 11): five screws each, zigzagged along 34½".
+[8,15,22,29,36].forEach((sx,i) => {
+  PARTS.push({ b:[sx-0.3, 42 + (i%2 ? 0.7 : 2.5), 3.0, 0.6,0.6,0.35], c:COL.lag, appear:11, only:[11] });
+  PARTS.push({ b:[sx-0.3, 48 + (i%2 ? 0.7 : 2.5), 3.0, 0.6,0.6,0.35], c:COL.lag, appear:11, only:[11] });
+});
+
+// ---- the full instructions, one entry per step --------------------------
+const STEPS = [
+['PREP · Meet your bench',
+`<p>Most workbenches are freestanding tables: four legs, with all the stability coming from the joints. <b>Ours cheats</b> — the back bolts directly to the wooden skeleton of your garage wall, the vertical <b>studs</b> you can see because the wall is unfinished. Once bolted on, the bench can't wobble without moving the building. That's why it out-stiffens store-bought benches at twice the price.</p>
+<p>Five groups of parts, five jobs (orbit the model to find each one):</p>
+<ul>
+<li><b>Ledger</b> — the horizontal 2×4 bolted to the studs; carries the back edge of the top. ("Ledger" is builder-speak for a wall-mounted board other things rest on — decks attach to houses the same way.)</li>
+<li><b>Front frame</b> — two legs + a beam, like a soccer goal; carries the front edge.</li>
+<li><b>Joists</b> — six short 2×4s bridging ledger to beam, like ladder rungs lying flat; the top rests on them.</li>
+<li><b>Kickers</b> — two short boards low down, tying each leg back to the wall so the legs can never swing; they also carry the shelf's front rail.</li>
+<li><b>Top</b> — two ¾" plywood layers screwed into one stiff 1½" slab, capped by a ⅛" hardboard skin that takes all the abuse and costs $11 to replace.</li>
+</ul>
+<p class="why">Lumber sizes, decoded: a "2×4" actually measures 1½" × 3½" (the name is its rough size before milling), so a doubled 2×4 is 3" thick. "8-ft" studs are sometimes really 92⅝". Every dimension in this guide already accounts for all of this.</p>`],
+
+['PREP · Gather materials & tools',
+`<p><b>Buy list (~$205; ~$161 without pegboard):</b></p>
+<ul>
+<li>10 × 2×4×8 SPF studs ($3.78 ea) — <i>at the rack, sight down each board's edge like a rifle barrel; reject bows and twists. Ten minutes of picking saves the whole day.</i></li>
+<li>1 × ¾" 4×8 standard spruce plywood ($59.98)</li>
+<li>1 × ⅛" 48"×48" hardboard panel ($10.89)</li>
+<li>12 × Paulin 5/16" × 4" hex lag bolts + 5/16" washers (~$17 total)</li>
+<li>1 × PaulinPRO #8 × 2½" screws, 150 pc ($25.88)</li>
+<li>1 × Paulin #8 × 1¼" construction screws, 100 pc ($9.48)</li>
+<li>1 × Fibrex 4×8 white pegboard ($43.98, optional)</li>
+</ul>
+<p><b>Why two screw sizes?</b> The 2½" screws join 1½"-thick wood to wood: through one board, an inch of bite into the next. The 1¼" screws attach sheets. The rule behind every fastener choice: <b>a screw must pass completely through the first piece and bite ~1" into the second.</b> Where the first piece is doubled (3" thick), screws can't get through — those joints get 4" <b>lag bolts</b> (thick hex-head screws driven with a socket, washer under the head) or <b>toe-screws</b> (driven at ~45° through a board's side — taught in Step 16).</p>
+<p><b>Tools:</b> drill (smooth — for holes) + impact driver (hammers as it spins — for screws and lags) with a ½" socket on a ¼"-hex adapter; a circular saw (5½" or 7¼" — both handle every cut); 7" rafter square (90° lines + saw guide); a 24"+ level; 7/32" twist bit (lag pilots); countersink bit; tape, pencil, safety glasses, hearing protection.</p>`],
+
+['PREP · The seating check',
+`<p>Before you cut anything, confirm the sitting ergonomics. The bench surface lands at <b>36⅛"</b> — kitchen-counter height — and the lower shelf's front edge sits <b>9" back</b> from the bench front at shin height (shelf surface 12¾").</p>
+<p><b>The test:</b> sit on a stool at a kitchen counter with a box slid 9" back underneath at shin height. Comfortable? Build as drawn. Want more room? Two one-line changes: narrow the shelf to 12" (shelf joists become 7½") or raise the cleat/rail/kicker lines 4" (the cut-to-fit post simply gets measured longer).</p>
+<p class="why">The legs only occupy the outer 3½" of the bench's width — between them, your knees go anywhere. The stool shown here is your reminder: this bench is designed to be sat at, not just stood at.</p>`],
+
+['PREP · Cut every part first',
+`<p>Do all the cutting in one session, before any assembly — open the <b>Cut plans</b> tab (top-left) for a to-scale diagram of every stud and sheet with the cuts numbered in order.</p>
+<p><b>Two terms:</b> a <b>crosscut</b> goes across a board; a <b>rip</b> runs along a sheet's length. Your blade eats ~⅛" per cut — the <b>kerf</b> — and every diagram already budgets for it (that's why some dimensions look oddly precise, like 23⅞").</p>
+<p><b>How to make a straight cut:</b> measure, mark a small V (a lone tick wanders), draw the line through it with the rafter square. Support the board so the offcut can fall free — never support both sides of a cut, or the closing gap pinches the blade. Set blade depth to poke ~¼" below the wood. Cut on the <b>waste side</b> of the line, guiding the saw's base against the rafter square. For the long plywood rips, clamp a straight 2×4 to the sheet as a guide rail and support the sheet on scrap 2×4s on the floor.</p>
+<p><b>Cutting order</b> (offcuts feed the next cuts): studs 1–6 each give one 60" piece, then a 19½" joist from the offcut. Studs 7–8 give the four 34½" legs, then three 10½" shelf joists from their offcuts. Stud 9: two 21" kickers, two 16" wall blocks, and the optional centre post (cut that one last, to fit). Stud 10 stays whole — insurance. <b>Measure each offcut before cutting from it.</b></p>`],
+
+['Mark the ledger line — 34½"',
+`<p>The red line on the studs is your first layout line: <b>34½" — the top of the ledger</b>, which puts the finished surface at 36⅛" after the 1½" top and ⅛" hardboard are added.</p>
+<p><b>Don't measure up from the floor at each stud — garage floors slope</b>, and you'd build a tilted bench. Instead: measure 34½" up at <b>one</b> stud, hold your level horizontal at that mark, adjust until the bubble is centred, and draw along the level's edge across all the studs in your 5-ft span.</p>
+<p class="why">Why this matters: every part of the bench references this line and the next one. Get them right and the bench levels itself.</p>`],
+
+['Mark the cleat line — 12"',
+`<p>Same technique, second line: <b>12" — the top of the shelf cleat</b> (which also makes the cleat's bottom edge your 8½" reference for the kickers later).</p>
+<p>Measure once at one stud, level across, draw the line across the span. The wall is now your blueprint — both height references exist before a single screw is driven.</p>`],
+
+['Bolt the ledger to the studs',
+`<p>Hold a 60" 2×4 with its top edge on the 34½" line (a helper, or two temporary screws, makes this easy).</p>
+<p><b>Drill pilot holes</b> — skinny pre-holes that stop splitting and keep big fasteners straight; 7/32" is right for a 5/16" lag. Drill through the ledger and ~2½" into the stud: <b>two holes per stud, one high and one low</b> (staggering avoids splitting along one grain line), at four studs.</p>
+<p>Washer on each lag, ½" socket in the impact driver, and drive until the washer presses firmly into the wood — <b>then stop</b>; over-tightening crushes the fibres and weakens the joint.</p>
+<p class="why">What you built: the load path. The bench now hangs off your wall framing through these 8 bolts (shown as dark heads on the ledger face).</p>`],
+
+['Screw the shelf cleat to the studs',
+`<p>A 60" 2×4 flat against the wall, top edge on the 12" line — <b>two 2½" screws into each stud</b>.</p>
+<p>It projects just 1½" from the wall, and that little edge is what carries the back of the lower shelf. No lags needed here; the shelf holds bins, not bench loads — the lags belong up top where the loads live.</p>`],
+
+['Double the beam — stack the pair',
+`<p>Three parts of this bench are made of <b>two 2×4s screwed face-to-face into one beefy 3"-thick member</b>: the front beam, the shelf rail, and each leg. You'll make the beam first and learn the technique.</p>
+<p>The model shows the idea: two identical 60" boards, the upper one lifted so you can see what's about to happen. Lay one flat on the floor, wide face up. Lower the second onto it, wide face to wide face, and slide it until the pair is <b>flush</b> — edges and ends perfectly aligned, no overhang anywhere. Run your fingertip along each edge; you'll feel a mismatch better than you can see one.</p>
+<p class="why">Why doubled? Every 2×4 has a slight natural bow. Stack two with their bows opposing and they fight each other and cancel — the pair is straighter and far stiffer than either board alone. Sight down both boards first and put the crowns (the humps) facing opposite ways.</p>`],
+
+['Double the beam — drive the zigzag',
+`<p>Now lock the pair together with <b>2½" screws every 8" in a zigzag</b> — one screw near one long edge, the next near the other, alternating down the length. The model shows the pattern as dark screw heads: eight screws for the 60" beam.</p>
+<p>Kneel on the boards (or clamp them) to hold the faces tight while you drive — the screw should pull the boards together, not hold a gap apart. Heads flush or just below the surface.</p>
+<p class="why">Why the zigzag? A single straight row of screws acts like a hinge line — the boards could still flex apart along it. Staggering the screws between the two edges triangulates the connection and the pair behaves like one solid timber. This joint pattern repeats on every doubled part, so get comfortable here.</p>`],
+
+['Double the rail and both legs the same way',
+`<p>Repeat the stack-flush-zigzag routine three more times:</p>
+<ul>
+<li><b>Shelf rail</b> — the other pair of 60" boards, eight screws zigzagged.</li>
+<li><b>Leg one</b> — a pair of 34½" boards, five screws zigzagged.</li>
+<li><b>Leg two</b> — the last pair of 34½" boards, five screws.</li>
+</ul>
+<p>Check each finished member: flush edges, flush ends, no rocking when laid on a flat floor. You now have four 3"-thick members (shown staged: beam, rail, and the two legs) — the complete kit for the front of the bench.</p>
+<p class="why">From here on, "the beam," "the rail," and "the legs" always mean these doubled members. Remember the fastener rule: anything screwed INTO a 3"-thick member from the far side needs a 4" lag or a toe-screw — ordinary 2½" screws can't pass through.</p>`],
+
+['Assemble the goalpost on the floor',
+`<p>Floor assembly is a builder's trick: gravity holds the parts still while you square and fasten.</p>
+<p>Lay the two doubled legs parallel, <b>60" apart outside-to-outside, wide (3½") faces up</b> — each leg sits 3" tall. Lay the beam across their top ends <b>wide face down</b>, flush at both corners, so the broad faces mate.</p>
+<p>Check each corner with the rafter square, then drive <b>two 4" lag bolts down through the beam into each leg</b> (7/32" pilots, washers on): through 3" of beam, 1" of bite into the leg. This is the doubled-into-doubled joint that ordinary screws can't span — and lags are stronger anyway.</p>
+<p class="why">When you stand the frame up, those broad mating faces turn to face front-and-back and the lags end up running horizontally — exactly right. (Shown standing, just forward of its final position.)</p>`],
+
+['Stand & position the frame',
+`<p>Stand the goalpost out from the wall so the gap between the ledger's front face and the beam's back face is <b>exactly 19½"</b> — and here's the trick: <b>two of your cut 19½" joists are perfect spacers</b> (shown ghosted). Hold one in the gap at each end and snug the frame against them. Frame depth is now exactly 24".</p>
+<p>Working alone? Screw a scrap 2×4 diagonally from the beam to a wall stud as a temporary hold — you'll remove it later.</p>
+<p class="why">Why fussy here: the frame's position defines the bench. Ten careful minutes now, flat top forever.</p>`],
+
+['Level it, then square it — while you still can',
+`<p><b>Level:</b> lay the level from ledger to beam — bubble centred? If not, the floor slopes: trim a leg bottom or slip a <b>shim</b> (thin wedge of scrap) underneath. Then check the beam is level along its own 60" length too.</p>
+<p><b>Square:</b> measure diagonally from each end of the ledger to the opposite end of the beam (the red dashed lines). <b>Equal numbers = square.</b> If not, slide the beam sideways until they match.</p>
+<p><b>Do this NOW</b> — when the joists go in (Step 19) they'll lock the frame with twelve screws, and after that, nothing nudges.</p>`],
+
+['Check the kicker tails — install the wall block',
+`<p>The two kickers will run from the wall to each leg, low down. <b>Before fastening anything</b>, hold each kicker in place (on edge, against the leg's inner face, running back to the wall) and look at what its tail lands on.</p>
+<p><b>A stud behind it?</b> That side needs nothing extra. <b>A bare bay?</b> — and at least one side will be, since the kicker positions don't match the wall's 16" stud rhythm — <b>install the block first</b>: a 16" 2×4 flat against the wall at kicker height, spanning the two nearest studs, two 2½" screws into each stud.</p>
+<p class="why">In this model the left kicker will land on a stud; the right one lands in a bay, so its block (highlighted) goes in now. Your wall may differ — check both sides.</p>`],
+
+['Fit the kickers',
+`<p>One 21" kicker per side, on edge, pressed against the leg's inner face.</p>
+<p><b>Set the height with the level, not the floor:</b> hold the level across from the <b>cleat's bottom edge</b> (that's the 8½" reference, already dead level from Step 6) and mark the leg — the kicker's top edge goes on that mark.</p>
+<p>Screw each kicker to its leg with <b>three 2½" screws</b> (through the 1½" kicker into the leg). Then fasten the tail with <b>two toe-screws</b> — straight into the stud on the bare side, into the block on the blocked side. The blocked-side kicker butts the block rather than the wall, sitting 1½" prouder than its twin — expected, and it changes nothing.</p>
+<p><b>Toe-screwing, your new skill:</b> start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the board's side into the wood behind. It feels wrong the first time and works every time.</p>
+<p class="why">What you built: the bottom of each leg is now locked to the building. The frame can no longer swing in any direction — try it. (The shelf deck will soon tie everything together even more.)</p>`],
+
+['Set the shelf rail',
+`<p>Rest the doubled rail across the two kickers — its ends sit on them, and its top edge lands at <b>12"</b>, matching the cleat line. Check with the level across from the cleat.</p>
+<p>Flush its ends with the frame's outside edges, then <b>toe-screw down into each kicker, two screws per end</b>.</p>
+<p class="why">Notice the rail floats 9" back from the bench front — that's your knee room, by design. It isn't attached to the legs at all; the kickers carry it.</p>`],
+
+['Optional: the centre post',
+`<p>If you plan to load the shelf heavily (filament boxes add up), give the rail a mid-span helper.</p>
+<p><b>Measure the actual gap</b> from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope. Cut the post to that exact length, stand it under the midpoint, and toe-screw it top and bottom.</p>
+<p class="why">Cheap insurance: a doubled 2×4 on edge barely sags over this span, but with the post it simply can't. Skip it if your shelf will hold light stuff.</p>`],
+
+['Install the six top joists',
+`<p>Six 19½" joists on edge between ledger and beam, <b>tops flush with both</b>.</p>
+<p><b>Position matters:</b> keep the two outer joists about <b>4" in from the bench ends</b> — the leg tops occupy the outermost corners, which is why joists can't go fully to the ends. Space the rest evenly (no gap wider than ~12"), with one directly under the 3D printer's future corner — extra support for the heaviest tenant.</p>
+<p>Fasten every joist end with <b>two 2½" toe-screws</b>: at the wall side into the ledger, at the front into the beam.</p>
+<p>Then re-measure both diagonals as a confirmation — they were set square in the leveling step, and toe-screws shouldn't have moved them.</p>
+<p class="why">What you built: the complete skeleton. Push down anywhere — nothing should move.</p>`],
+
+['Frame the shelf',
+`<p>Three 10½" shelf joists lie <b>flat</b> between the cleat and the rail's back face, tops flush at 12": one near each end, and the third at <b>35⅞" from the left end</b> — exactly under where the shelf deck's seam will land. <span class="why">A seam always needs wood beneath it.</span></p>
+<p>Two toe-screws per end — into the cleat at the back, into the rail at the front.</p>`],
+
+['Deck the shelf',
+`<p>Drop on the two ply pieces — <b>15" × 35⅞"</b> on the left, <b>15" × 24⅛"</b> on the right — seam over that middle joist. Screw down with <b>1¼" screws every ~8"</b> into the cleat, the joists, and the rail.</p>
+<p class="why">Why this little shelf punches above its weight: an open frame can lean into a parallelogram ("racking"); skin it with a screwed-down panel and it geometrically can't. Engineers call the panel a <b>diaphragm</b>. You just built one connecting the legs, the wall, and the rail — most of the bench's added rigidity arrives right here.</p>`],
+
+['Top — bottom layer',
+`<p>The <b>23⅞" × 60"</b> ply goes down first, pushed <b>flush to the wall</b>. Its front edge sits ⅛" shy of the beam's face — that's correct (the rip kerf made this strip the narrow one), and it's about to be hidden.</p>
+<p>Screw with 2½" screws, <b>countersunk</b>: two into every joist, plus one every ~12" along the ledger and beam edges. To countersink, drill the cone first with the countersink bit or just drive the head slightly below the surface — these construction screws mostly self-seat.</p>
+<p class="why">Why heads must sit below flush: the next layer has to lie dead flat on this one — one proud screw head and the whole top rocks on it.</p>`],
+
+['Top — top layer',
+`<p>The full <b>24" × 60"</b> sheet, front edge <b>flush with the beam face</b>.</p>
+<p>Screw it to the layer below with <b>1¼" screws on an ~8" grid</b>, countersunk, working <b>centre-outward</b> — like smoothing a screen protector, this chases any cup in the ply out to the edges instead of trapping it in the middle. Stay a couple of inches off the lines where the last step's screws went (no point hitting steel).</p>
+<p class="why">Appearance doesn't matter — the hardboard hides everything. What you built: a 1½" laminated slab, no glue, fully serviceable with a screwdriver.</p>`],
+
+['The wear surface',
+`<p>Hardboard, <b>smooth side up</b>: the 24" × 48" piece plus the 23⅞" × 12" piece. Put the narrower piece's ⅛" shortfall <b>against the wall</b>, where it vanishes. The seam between pieces can go wherever you like — the ply below is continuous, so it's purely cosmetic.</p>
+<p>About 4 screws per piece at corners/edges, 1¼", countersunk <b>dead flush</b> — a hair-proud head will scratch every project that slides over it. <b>No glue.</b></p>
+<p class="why">Why this layer exists: it's the designated victim. Cuts, paint, solder burns all land here. In a few years, back out the screws and drop in your 23⅞" × 35⅞" leftover blank — or a fresh $11 panel — and the bench looks new.</p>`],
+
+['Pegboard',
+`<p>Cut the pegboard to <b>60" wide</b> × whatever height fills the space between benchtop and ceiling or cabinets. Screw it straight to the studs with <b>1¼" screws every 12"</b>.</p>
+<p class="why">Pegboard normally needs spacer strips behind it so hooks can grab through the holes — your open stud bays provide that gap for free. Hang the printer tools, hex keys, and scrapers right above the X2D's corner.</p>`],
+
+['Finish — and load it up',
+`<p><b>Ease</b> (sand the sharpness off) the bench's front edge and the shelf edges with 120-grit. The hardboard needs nothing. Optional: a wipe of Danish oil on the exposed plywood edges.</p>
+<p>Final numbers: surface at <b>36⅛"</b>, shelf at <b>12¾"</b> with 9" of knee room, the printer over the stiffest corner (doubled leg + extra joist), and the whole bench bolted into your wall framing through 8 lags. <b>Not a drop of glue touched the project</b> — every layer comes apart with a screwdriver, and the work surface renews for $11.</p>
+<p class="why">The golden rule, one last time: measure twice, mark with a V, cut on the waste side, and check square or level before driving screws — screws are patient. Enjoy the maker space, Dan.</p>`]
+];
+
+// ---- three.js scene ----------------------------------------------------
+const wrap = document.getElementById('scene');
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+wrap.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x1d2125);
+scene.fog = new THREE.Fog(0x1d2125, 260, 520);
+
+const camera = new THREE.PerspectiveCamera(40, 1, 0.5, 1200);
+const TARGET = new THREE.Vector3(30, 20, 14);
+let theta = -0.65, phi = 1.12, dist = 130;
+
+scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+const sun = new THREE.DirectionalLight(0xffffff, 0.75);
+sun.position.set(60, 120, 90);
+scene.add(sun);
+const fill = new THREE.DirectionalLight(0x88aaff, 0.18);
+fill.position.set(-40, 60, -60);
+scene.add(fill);
+
+function mkBox(b, color, opacity) {
+  const [x,y,z,w,d,h] = b;
+  const geo = new THREE.BoxGeometry(w, h, d);
+  const mat = new THREE.MeshLambertMaterial({ color });
+  if (opacity !== undefined) { mat.transparent = true; mat.opacity = opacity; }
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.set(x + w/2, z + h/2, y + d/2);
+  const edges = new THREE.LineSegments(
+    new THREE.EdgesGeometry(geo),
+    new THREE.LineBasicMaterial({ color: 0x14171a, transparent:true, opacity:0.35 })
+  );
+  mesh.add(edges);
+  return mesh;
+}
+
+// static context: floor, studs, plates
+const ctx = new THREE.Group();
+const floorMesh = new THREE.Mesh(
+  new THREE.PlaneGeometry(420, 420),
+  new THREE.MeshLambertMaterial({ color: COL.floor })
+);
+floorMesh.rotation.x = -Math.PI/2;
+floorMesh.position.set(30, -0.01, 60);
+ctx.add(floorMesh);
+const grid = new THREE.GridHelper(420, 35, 0x444c54, 0x2b3138);
+grid.position.set(30, 0.0, 60);
+ctx.add(grid);
+[-12, 4, 20, 36, 52, 68].forEach(cx => {
+  ctx.add(mkBox([cx-0.75, -3.5, 1.5, 1.5, 3.5, 82.5], COL.wall, 0.9));
+});
+ctx.add(mkBox([-16, -3.5, 0, 96, 3.5, 1.5], COL.wall, 0.9));
+ctx.add(mkBox([-16, -3.5, 84, 96, 3.5, 1.5], COL.wall, 0.9));
+scene.add(ctx);
+
+const meshes = PARTS.map(p => {
+  const m = mkBox(p.b, p.c, p.ghost ? 0.35 : undefined);
+  m.userData = p;
+  m.visible = false;
+  scene.add(m);
+  return m;
+});
+
+// diagonal check lines (squaring step only)
+const diagMat = new THREE.LineBasicMaterial({ color: COL.line });
+function diag(x1,y1,x2,y2) {
+  const g = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(x1, 34.8, y1), new THREE.Vector3(x2, 34.8, y2)
+  ]);
+  return new THREE.Line(g, diagMat);
+}
+const diag1 = diag(0,0,60,24), diag2 = diag(60,0,0,24);
+diag1.visible = diag2.visible = false;
+scene.add(diag1, diag2);
+
+// ---- step control -------------------------------------------------------
+let step = 1;
+const N = STEPS.length;          // 24
+const PREVIEW = [1, 3];          // steps that show the finished bench
+const titleEl = document.getElementById('stepTitle');
+const capEl = document.getElementById('stepCaption');
+const dotsEl = document.getElementById('dots');
+
+for (let i = 1; i <= N; i++) {
+  const d = document.createElement('div');
+  d.className = 'dot'; d.textContent = i;
+  d.onclick = () => setStep(i);
+  dotsEl.appendChild(d);
+}
+
+function setStep(s) {
+  step = Math.max(1, Math.min(N, s));
+  const preview = PREVIEW.includes(step);
+  meshes.forEach(m => {
+    const p = m.userData;
+    let vis;
+    if (p.only) vis = p.only.includes(step);
+    else if (preview) vis = true;
+    else vis = step >= p.appear;
+    m.visible = vis;
+    const isNew = vis && p.appear === step && !preview;
+    m.material.color.set(isNew ? COL.highlight : p.c);
+    m.material.emissive = new THREE.Color(isNew ? 0x4a2208 : 0x000000);
+  });
+  diag1.visible = diag2.visible = (step === 14);
+  titleEl.innerHTML = '<span class="num">Step ' + step + ' of ' + N + '</span> — ' + STEPS[step-1][0];
+  capEl.innerHTML = STEPS[step-1][1];
+  capEl.scrollTop = 0;
+  [...dotsEl.children].forEach((d,i) => {
+    d.className = 'dot' + (i+1 < step ? ' done' : '') + (i+1 === step ? ' active' : '');
+  });
+  document.getElementById('prev').disabled = (step === 1);
+  document.getElementById('next').textContent = step === N ? 'Done ✓' : 'Next →';
+}
+
+document.getElementById('prev').onclick = () => setStep(step-1);
+document.getElementById('next').onclick = () => setStep(step+1);
+window.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') setStep(step+1);
+  if (e.key === 'ArrowLeft') setStep(step-1);
+});
+
+// ---- orbit controls -----------------------------------------------------
+let dragging = false, px = 0, py = 0;
+const el = renderer.domElement;
+el.addEventListener('pointerdown', e => { dragging = true; px = e.clientX; py = e.clientY; el.setPointerCapture(e.pointerId); });
+el.addEventListener('pointermove', e => {
+  if (!dragging) return;
+  theta -= (e.clientX - px) * 0.006;
+  phi   -= (e.clientY - py) * 0.006;
+  phi = Math.max(0.15, Math.min(1.45, phi));
+  px = e.clientX; py = e.clientY;
+});
+el.addEventListener('pointerup', () => dragging = false);
+el.addEventListener('wheel', e => {
+  e.preventDefault();
+  dist *= (1 + Math.sign(e.deltaY) * 0.08);
+  dist = Math.max(50, Math.min(350, dist));
+}, { passive:false });
+
+function layout() {
+  const w = wrap.clientWidth, h = wrap.clientHeight;
+  renderer.setSize(w, h);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+window.addEventListener('resize', layout);
+
+function animate() {
+  requestAnimationFrame(animate);
+  camera.position.set(
+    TARGET.x + dist * Math.sin(phi) * Math.sin(theta),
+    TARGET.y + dist * Math.cos(phi),
+    TARGET.z + dist * Math.sin(phi) * Math.cos(theta)
+  );
+  camera.lookAt(TARGET);
+  renderer.render(scene, camera);
+}
+
+layout();
+setStep(1);
+animate();
+
+// ============================================================
+// CUT PLANS TAB — scaled diagrams of every board and sheet.
+// Scale: 8 px per inch everywhere, so a 1/8" saw kerf = exactly 1 px.
+// ============================================================
+const PX = 8, KERF = 0.125;
+const C = { part:'#c9a36b', dark:'#b8905a', ply:'#e3cf9e', hb:'#7a553a', keep:'#8a6a4a',
+            waste:'#343b42', cut:'#d94f30', text:'#1d2125', light:'#e9e4da', muted:'#9aa3ab' };
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+function studSVG(segs, spare){
+  const W = 96*PX, H = 64, barY = 18, barH = 30;
+  let s = '<svg width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'">';
+  if (spare){
+    s += '<rect x="0" y="'+barY+'" width="'+W+'" height="'+barH+'" rx="3" fill="'+C.part+'" opacity="0.45"/>';
+    s += '<text x="'+(W/2)+'" y="'+(barY+barH/2+4)+'" text-anchor="middle" font-size="13" font-weight="600" fill="'+C.light+'">SPARE — leave uncut</text>';
+  } else {
+    let x = 0, used = 0;
+    segs.forEach(function(seg){
+      const w = seg[0]*PX;
+      const col = seg[3] || C.part;
+      s += '<rect x="'+x+'" y="'+barY+'" width="'+w+'" height="'+barH+'" fill="'+col+'"/>';
+      s += '<text x="'+(x+w/2)+'" y="'+(barY+13)+'" text-anchor="middle" font-size="10.5" font-weight="600" fill="'+C.text+'">'+esc(seg[1])+'</text>';
+      s += '<text x="'+(x+w/2)+'" y="'+(barY+26)+'" text-anchor="middle" font-size="10.5" fill="'+C.text+'">'+esc(seg[2])+'</text>';
+      x += w; used += seg[0];
+      s += '<rect x="'+x+'" y="'+(barY-3)+'" width="'+(KERF*PX)+'" height="'+(barH+6)+'" fill="'+C.cut+'"/>';
+      x += KERF*PX; used += KERF;
+    });
+    const rest = 96 - used;
+    if (rest > 0.2){
+      s += '<rect x="'+x+'" y="'+barY+'" width="'+(rest*PX)+'" height="'+barH+'" fill="'+C.waste+'"/>';
+      s += '<text x="'+(x+rest*PX/2)+'" y="'+(barY+barH/2+4)+'" text-anchor="middle" font-size="10.5" fill="'+C.muted+'">offcut ~'+rest.toFixed(1)+'&quot;</text>';
+    }
+    const gx = 92.625*PX;
+    s += '<line x1="'+gx+'" y1="6" x2="'+gx+'" y2="'+(barY+barH+8)+'" stroke="'+C.muted+'" stroke-width="1.5" stroke-dasharray="4 4"/>';
+    s += '<text x="'+gx+'" y="'+(H-2)+'" text-anchor="end" font-size="9.5" fill="'+C.muted+'">92&#8541;&quot; stud ends here — all cuts still fit</text>';
+  }
+  return s + '</svg>';
+}
+
+function sheetSVG(wIn, hIn, pieces, cuts){
+  const W = wIn*PX, H = hIn*PX, P = 22;
+  let s = '<svg width="'+(W+P)+'" height="'+(H+P)+'" viewBox="-'+P+' -'+P+' '+(W+P+6)+' '+(H+P+6)+'">';
+  s += '<rect x="0" y="0" width="'+W+'" height="'+H+'" fill="'+C.waste+'" stroke="#566069"/>';
+  pieces.forEach(function(p){
+    const x=p[0]*PX, y=p[1]*PX, w=p[2]*PX, h=p[3]*PX;
+    s += '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+p[6]+'" stroke="#1d2125" stroke-width="1"/>';
+    const small = (w<150 || h<60);
+    s += '<text x="'+(x+w/2)+'" y="'+(y+h/2-(p[5]?4:-4))+'" text-anchor="middle" font-size="'+(small?10:13)+'" font-weight="700" fill="'+(p[6]===C.waste?C.muted:C.text)+'">'+esc(p[4])+'</text>';
+    if (p[5]) s += '<text x="'+(x+w/2)+'" y="'+(y+h/2+12)+'" text-anchor="middle" font-size="'+(small?9.5:11)+'" fill="'+(p[6]===C.waste?C.muted:C.text)+'">'+esc(p[5])+'</text>';
+  });
+  cuts.forEach(function(c){
+    const x1=c[0]*PX, y1=c[1]*PX, x2=c[2]*PX, y2=c[3]*PX;
+    s += '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+C.cut+'" stroke-width="2.5" stroke-dasharray="7 5"/>';
+    const mx=(x1+x2)/2, my=(y1+y2)/2;
+    s += '<circle cx="'+mx+'" cy="'+my+'" r="10" fill="'+C.cut+'"/>';
+    s += '<text x="'+mx+'" y="'+(my+4)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">'+c[4]+'</text>';
+  });
+  s += '<text x="'+(W/2)+'" y="-8" text-anchor="middle" font-size="11" fill="'+C.muted+'">'+wIn+'&quot;</text>';
+  s += '<text x="-8" y="'+(H/2)+'" text-anchor="middle" font-size="11" fill="'+C.muted+'" transform="rotate(-90 -8 '+(H/2)+')">'+hIn+'&quot;</text>';
+  return s + '</svg>';
+}
+
+function card(title, body, note){
+  return '<h2>'+title+'</h2>' + (note ? '<p class="note">'+note+'</p>' : '') + '<div class="card">'+body+'</div>';
+}
+
+const studDefs = [
+  ['Stud 1', [[60,'LEDGER','60"'],[19.5,'Top joist','19½"']]],
+  ['Stud 2', [[60,'FRONT BEAM — half 1 of 2','60"'],[19.5,'Top joist','19½"']]],
+  ['Stud 3', [[60,'FRONT BEAM — half 2 of 2','60"'],[19.5,'Top joist','19½"']]],
+  ['Stud 4', [[60,'SHELF CLEAT','60"'],[19.5,'Top joist','19½"']]],
+  ['Stud 5', [[60,'SHELF RAIL — half 1 of 2','60"'],[19.5,'Top joist','19½"']]],
+  ['Stud 6', [[60,'SHELF RAIL — half 2 of 2','60"'],[19.5,'Top joist','19½"']]],
+  ['Stud 7', [[34.5,'LEG','34½"',C.dark],[34.5,'LEG','34½"',C.dark],[10.5,'Shelf joist','10½"'],[10.5,'Shelf joist','10½"']]],
+  ['Stud 8', [[34.5,'LEG','34½"',C.dark],[34.5,'LEG','34½"',C.dark],[10.5,'Shelf joist','10½"']]],
+  ['Stud 9', [[21,'KICKER','21"'],[21,'KICKER','21"'],[16,'Wall block','16"'],[16,'Wall block','16"'],[8.5,'Post','~8½" fit']]],
+  ['Stud 10', null]
+];
+
+function renderCuts(){
+  let html = '';
+  html += '<div class="rules"><b>Read me before the first cut.</b> Red marks are the saw kerf — the ⅛&quot; the blade eats — drawn to true scale and already budgeted in every diagram. '
+    + 'Work left to right on each stud: cut the big piece first, and the offcut automatically becomes the next part. '
+    + 'Mark with a V, cut on the waste side of the line, and measure each offcut before cutting from it. '
+    + 'The dashed grey line shows where a short 92⅝&quot; &quot;8-ft&quot; stud would end — every layout still fits.</div>';
+
+  let studHtml = '';
+  studDefs.forEach(function(d){
+    studHtml += '<div style="font-size:13px;color:'+C.muted+';margin:8px 0 0">'+d[0]+'</div>' + studSVG(d[1], d[1]===null);
+  });
+  html += card('The ten 2×4s — one bar per stud, to scale',
+    studHtml,
+    'Order: studs 1–6 each give one 60&quot; piece, then a 19½&quot; joist from the offcut. Studs 7–8 give the legs, then the shelf joists from their offcuts. Stud 9 carries the small parts — cut the post last, to the gap you measure in place (Step 18 of the build). Stud 10 stays whole.');
+
+  html += card('The plywood sheet — ¾&quot; × 48&quot; × 96&quot;, cuts numbered in order',
+    sheetSVG(96, 48, [
+      [0,      0,      60,    23.875, 'TOP — BOTTOM LAYER', '23⅞" × 60"', C.ply],
+      [60.125, 0,      24.125,15,     'SHELF DECK B', '15" × 24⅛"', C.ply],
+      [84.375, 0,      11.625,15,     'offcut', '', C.waste],
+      [60.125, 15.125, 35.875,8.75,   'offcut', '', C.waste],
+      [0,      24,     60,    24,     'TOP — TOP LAYER', '24" × 60"', C.ply],
+      [60.125, 24,     35.875,15,     'SHELF DECK A', '15" × 35⅞"', C.ply],
+      [60.125, 39.125, 35.875,8.875,  'offcut', '', C.waste]
+    ],[
+      [0,23.94, 96,23.94, '1'],
+      [60,0,    60,23.875,'2'],
+      [60,24,   60,48,    '3'],
+      [60.125,39.06, 96,39.06, '4'],
+      [60.125,15.06, 96,15.06, '5'],
+      [84.3,0,  84.3,15,  '6']
+    ]),
+    'Cut ① is the one full-length rip, set at 23⅞&quot; — the kerf makes the other strip exactly 24&quot;. Cuts ② and ③ free the two top layers at 60&quot;. Cuts ④–⑥ carve the two shelf pieces from the leftovers. Use a 2×4 clamped as a guide rail for ① and support the sheet on scrap so the offcut can’t pinch the blade.');
+
+  html += card('The hardboard panel — ⅛&quot; × 48&quot; × 48&quot;',
+    sheetSVG(48, 48, [
+      [0,      0,      48,    24,     'WEAR SURFACE A', '24" × 48"', C.hb],
+      [0,      24.125, 12,    23.875, 'WEAR SURFACE B', '23⅞" × 12"', C.hb],
+      [12.125, 24.125, 35.875,23.875, 'REPLACEMENT BLANK', '23⅞" × 35⅞" — keep this!', C.keep]
+    ],[
+      [0,24.06, 48,24.06, '1'],
+      [12.06,24.125, 12.06,48, '2']
+    ]),
+    'Cut ① rips the panel at 24&quot;; the kerf makes the lower strip 23⅞&quot; — which is why piece B installs with its ⅛&quot; shortfall against the wall. Cut ② frees piece B at 12&quot;. The big remainder is your future replacement surface: label it and store it flat.');
+
+  html += card('The pegboard — 48&quot; × 96&quot;, one cut',
+    sheetSVG(96, 48, [
+      [0,      0, 60,     48, 'PEGBOARD', '60" × 48" — spans the studs above the bench', '#d7d7d0'],
+      [60.125, 0, 35.875, 48, 'offcut', 'spare pegboard — handy elsewhere in the garage', C.waste]
+    ],[
+      [60,0, 60,48, '1']
+    ]),
+    'One crosscut at 60&quot;. Height is flexible — trim to whatever fills the space between benchtop and ceiling or cabinets.');
+
+  document.getElementById('cutsInner').innerHTML = html;
+}
+renderCuts();
+
+// ---- tab switching ----
+const cutsEl = document.getElementById('cuts');
+const tabB = document.getElementById('tabBuild'), tabC = document.getElementById('tabCuts');
+function setTab(which){
+  const cuts = which === 'cuts';
+  cutsEl.style.display = cuts ? 'block' : 'none';
+  document.getElementById('hud').style.display = cuts ? 'none' : 'block';
+  document.getElementById('legend').style.display = cuts ? 'none' : 'block';
+  document.getElementById('hint').style.display = cuts ? 'none' : 'block';
+  tabB.className = 'tab' + (cuts ? '' : ' active');
+  tabC.className = 'tab' + (cuts ? ' active' : '');
+}
+tabB.onclick = function(){ setTab('build'); };
+tabC.onclick = function(){ setTab('cuts'); };
+</script>
+</body>
+</html>
