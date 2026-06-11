@@ -36,12 +36,12 @@ Shopping list for the stud-anchored workbench. ~~Struck-through~~ items are alre
 | 7/32" twist bit | ~$4 | Lag pilot holes (Steps 7 & 12) |
 | ⅛" twist bit | ~$3 | Near-end pilots for the rail/post toe-screws |
 | Countersink bit | ~$8 | Seats screw heads flush in the plywood and hardboard |
-| Tape measure | ~$10 | |
+| ~~Tape measure~~ | — | **Have** |
 | Pencil | ~$1 | |
-| Safety glasses | ~$5 | |
-| Hearing protection | ~$15 | |
+| ~~Safety glasses~~ | — | **Have** |
+| ~~Hearing protection~~ | — | **Have** |
 | 120-grit sandpaper | ~$5 | Easing edges in the final step |
 
-**Left to buy:** ~$216 in materials (or ~$172 without pegboard) + $48.97 jig + roughly $60 of bits, socket, and PPE — less whatever's already in your toolbox.
+**Left to buy:** ~$216 in materials (or ~$172 without pegboard) + $48.97 jig + roughly $29 of bits, socket adapter, pencil, and sandpaper.
 
 **Driving with a drill instead of an impact driver:** completely fine for this build. Use the low-speed/high-torque gear (1) for the lags and the long screws, keep the clutch engaged so you don't over-drive, and lean in — the drill won't hammer like an impact does, so it relies on your arm for the last quarter-turn. The 12 lags are the only spot you'll notice the difference; pilot holes make them manageable.
