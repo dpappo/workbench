@@ -1,6 +1,6 @@
 # Stud-Anchored Workbench with Lower Shelf
 
-A wall-anchored garage workbench for unfinished stud walls — designed with [Claude](https://claude.com), built from ~$217 in materials, no glue, pocket-hole joinery throughout.
+A wall-anchored garage workbench for unfinished stud walls — designed with [Claude](https://claude.com), built from ~$216 in materials, no glue, pocket-hole joinery throughout.
 
 ![Finished workbench in a garage with pegboard above](assets/workbench.png)
 
@@ -38,7 +38,7 @@ The 3D guide is served from [`index.html`](index.html) via GitHub Pages. The mar
 - **Replaceable hardboard top** — sacrificial wear surface; swap it for ~$11 when it gets beat up
 - **Open stud bays** — pegboard mounts directly to studs; no spacer strips needed
 
-Roughly **$173** for the bench itself, **~$217** with pegboard, plus a **$49** Kreg 320 pocket-hole jig you'll reuse forever (prices from a Canadian big-box run; your mileage may vary).
+Roughly **$172** for the bench itself, **~$216** with pegboard, plus a **$49** Kreg 320 pocket-hole jig you'll reuse forever (prices from a Canadian big-box run; your mileage may vary).
 
 ---
 
