@@ -13,9 +13,9 @@ Shopping list for the stud-anchored workbench. ~~Struck-through~~ items are alre
 | [⅛" 48"×48" hardboard panel](https://www.homedepot.ca/product/cutler-group-hardboard-panel-1-8-inch-x-48-inches-x-48-inches/1000132235) | 1 | $10.89 | $10.89 | |
 | [Paulin 5/16" × 4" hex lag bolts, zinc](https://www.homedepot.ca/product/paulin-5-16-x-4-inch-hex-head-lag-bolt-zinc-plated/1000136736) | 12 | $1.18 | $14.16 | |
 | [Paulin 5/16" plain steel washers, zinc](https://www.homedepot.ca/product/paulin-5-16-inch-plain-steel-washers-zinc-plated-1pc/1000131518) — one per lag; in-store bin item | 12 | $0.19 | $2.28 | |
-| [PaulinPRO #8 × 2½" screws, 150 pc](https://www.homedepot.ca/product/profast-8-x-2-1-2-inch-pro-deck-screws-in-brown-150-piece-/1001109918) | 1 | $25.88 | $25.88 | |
-| [Paulin #8 × 1¼" construction screws, 100 pc](https://www.homedepot.ca/product/paulin--8-x-1-1-4-inch-flat-head-square-drive-construction-screws-in-yellow-zinc-100pcs/1000684323) | 1 | $9.48 | $9.48 | |
-| [Kreg 2½" coarse Blue-Kote pocket screws, 50 ct](https://www.homedepot.ca/product/kreg-tool-company-2-1-2-inch-64-mm-coarse-thread-blue-kote-pocket-hole-screws-50-ct-/1001490327) | 1 | $11.99 | $11.99 | |
+| [PaulinPRO #8 × 2½" screws, 150 pc](https://www.homedepot.ca/product/profast-8-x-2-1-2-inch-pro-deck-screws-in-brown-150-piece-/1001109918) — **T20 star drive, bit in box** | 1 | $25.88 | $25.88 | |
+| [Paulin #8 × 1¼" construction screws, 100 pc](https://www.homedepot.ca/product/paulin--8-x-1-1-4-inch-flat-head-square-drive-construction-screws-in-yellow-zinc-100pcs/1000684323) — **#2 Robertson square drive** | 1 | $9.48 | $9.48 | |
+| [Kreg 2½" coarse Blue-Kote pocket screws, 50 ct](https://www.homedepot.ca/product/kreg-tool-company-2-1-2-inch-64-mm-coarse-thread-blue-kote-pocket-hole-screws-50-ct-/1001490327) — **#2 square; use the long Kreg driver from the jig** | 1 | $11.99 | $11.99 | |
 | **Bench materials subtotal** | | | **$172.46** | |
 | [Fibrex 4×8 white pegboard](https://www.homedepot.ca/product/fibrex-5-5mm-48-inch-x96-inch-white-hdf-hardboard-pegboard/1000428749) (optional) | 1 | $43.98 | $43.98 | |
 | **Total with pegboard** | | | **~$216** | |
