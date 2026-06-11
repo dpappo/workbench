@@ -27,8 +27,8 @@ Shopping list for the stud-anchored workbench. Outstanding items are listed firs
 
 | Tool | Price | Status / notes |
 |------|-------|----------------|
-| [DEWALT 12" trigger clamp, 100 lb, 2.43" throat](https://www.homedepot.ca/product/dewalt-12-inch-100-lb-trigger-clamp-w-2-43-inch-throat-depth/1000812311) | $19.98 (33% off) | Holds the Kreg jig to each board while drilling the 40 pockets (the vise-grip's 1⅞" capacity can't span jig + board). Same force/throat as the 6" at the sale price, with capacity to spare — also clamps laminations and the plywood rip guide rail |
 | 3/8" twist bit | — | Check your bit set — most include one. Spun **in reverse** at the mouth of a pilot hole, it chamfers a clean screw-head recess (the no-countersink trick used in Steps 22–24) |
+| ~~[DEWALT 12" trigger clamp, 100 lb, 2.43" throat](https://www.homedepot.ca/product/dewalt-12-inch-100-lb-trigger-clamp-w-2-43-inch-throat-depth/1000812311)~~ | — | **Have** — holds the Kreg jig to each board while drilling the 40 pockets; also clamps laminations and the plywood rip guide rail |
 | ~~[Kreg 320 pocket-hole jig](https://www.homedepot.ca/product/kreg-tool-company-pocket-hole-jig-320/1001491607)~~ | — | **Have** — drills the 40 guided angled joints; includes stepped bit and driver bit |
 | ~~Drill~~ | — | **Have.** Will also drive the screws (see note below) |
 | ~~Impact driver~~ | — | **Skipping** — driving screws and lags with the drill instead |
@@ -44,7 +44,7 @@ Shopping list for the stud-anchored workbench. Outstanding items are listed firs
 | ~~Hearing protection~~ | — | **Have** |
 | ~~120-grit sandpaper~~ | — | **Have** |
 
-**Left to buy:** ~$126 in lumber and hardware (studs, plywood, hardboard, lags, washers, pencil) — or ~$170 with optional pegboard — plus a ~$20 trigger clamp for the pocket-hole jig, and confirm you have a 3/8" twist bit in your set.
+**Left to buy:** ~$126 in lumber and hardware (studs, plywood, hardboard, lags, washers, pencil) — or ~$170 with optional pegboard — and confirm you have a 3/8" twist bit in your set.
 
 **Driving with a drill instead of an impact driver:** completely fine for this build. Use the low-speed/high-torque gear (1) for the long screws, keep the clutch engaged so you don't over-drive, and lean in — the drill won't hammer like an impact does, so it relies on your arm for the last quarter-turn.
 
