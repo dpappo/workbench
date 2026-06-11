@@ -40,9 +40,9 @@ Most workbenches are freestanding tables: four legs, with all the stability comi
 
 The 2½" screws join 1½"-thick wood face-to-face: through one board, an inch of bite into the next. The 1¼" screws attach sheets (ply-to-ply, hardboard, pegboard). The Kreg pocket screws make the angled end-to-face joints. The rule that explains all the fastener choices below: **a screw must pass completely through the first piece and bite at least ~1" into the second.**
 
-**Pilot holes, the one rule:** lag bolts always get a 7/32" pilot. Regular construction screws are self-drilling in softwood and need none — *except* within ~1½" of a board's end, where a ⅛" pilot prevents splitting. The steps call out every pilot moment; there are only four in the whole build (the two lag steps, the rail toe-screws, and the optional post).
+**Pilot holes, the one rule:** lag bolts always get a 7/32" pilot. Regular construction screws are self-drilling in softwood and need none — *except* within ~1½" of a board's end, where a ⅛" pilot prevents splitting. The steps call out every pilot moment; there are only five in the whole build (the two lag steps, the kicker tails, the rail toe-screws, and the optional post).
 
-**The angled joints.** Wherever a board's end meets another board's face — joist into ledger, kicker tail into its wall block — a straight screw has nothing to grab. This build uses **pocket holes**: the Kreg jig drills a guided, angled channel into the board's side, and a 2½" pocket screw drives through it into the wood behind. Foolproof angle, no splitting, and you drill every pocket comfortably at the bench before assembly. Two joints (the rail ends and the optional post) instead use **toe-screws** — the freehand version of the same idea, taught in Step 8. And wherever the first piece is a doubled (3") member, the joint gets a 4" lag bolt (thick hex-headed screw driven with a socket, washer under the head to spread the clamping force).
+**The angled joints.** Wherever a board's end meets another board's face — like a joist meeting the ledger — a straight screw has nothing to grab. This build uses **pocket holes**: the Kreg jig drills a guided, angled channel into the board's side, and a 2½" pocket screw drives through it into the wood behind. Foolproof angle, no splitting, and you drill every pocket comfortably at the bench before assembly. A few joints — the kicker tails, the rail ends, and the optional post — instead use **toe-screws**, the freehand version of the same idea, taught in Step 7. And wherever the first piece is a doubled (3") member, the joint gets a 4" lag bolt (thick hex-headed screw driven with a socket, washer under the head to spread the clamping force).
 
 **At the lumber rack:** sight down each stud's long edge like a rifle barrel; reject any that curve ("bow") or corkscrew ("twist"). Ten minutes of picking saves the whole day.
 
@@ -69,7 +69,6 @@ The 2½" screws join 1½"-thick wood face-to-face: through one board, an inch of
 | 2×4 × 34½" | 4 | Legs (2 doubled) |
 | 2×4 × 19½" | 6 | Top joists |
 | 2×4 × 21" | 2 | Kickers |
-| 2×4 × 16" | 2 | Kicker wall blocks |
 | 2×4 × 10½" | 3 | Shelf joists |
 | 2×4 × ~8½" (cut to fit in place) | 1 | Optional centre post under shelf rail |
 | ¾" ply, 23⅞" × 60" | 1 | Top, bottom layer |
@@ -89,12 +88,12 @@ Offcuts feed the next cuts — verified to work even with 92⅝" studs:
 2. **From each of those six offcuts:** one 19½" top joist.
 3. **Studs 7–8:** two 34½" legs each. Keep the offcuts.
 4. **From stud 7's offcut:** two 10½" shelf joists. From stud 8's offcut: the third.
-5. **Stud 9:** two 21" kickers, two 16" wall blocks, and the optional centre post — cut the post last, to the gap you measure in place (Step 8).
+5. **Stud 9:** two 21" kickers and the optional centre post — cut the post last, to the gap you measure in place (Step 8). A large offcut remains as bonus scrap.
 6. **Stud 10** stays whole — insurance against a miscut or hidden flaw.
 
 Measure each offcut before cutting from it.
 
-### The pocket-hole map — drill all 40 before assembly
+### The pocket-hole map — drill all 36 before assembly
 
 Do this immediately after cutting, while every piece is still loose on the bench. Jig set to **1½" material**, collar on the stepped bit to match, jig flush with the board end so the screw exits the end grain. Each pair of pockets sits **1" and 2½" in from the board's long edges** (the Kreg 320's two guides land there automatically when the jig is centred on the 3½" face), with centres about 1¾" back from the end. Keep each piece's pockets on the SAME face so all driving happens from one side.
 
@@ -102,8 +101,8 @@ Do this immediately after cutting, while every piece is still loose on the bench
 |-------|-----|---------|-------|------|
 | Top joist, 19½" | 6 | 2 per end (4 each) | both ends | all four on the same wide face |
 | Shelf joist, 10½" | 3 | 2 per end (4 each) | both ends | underside face — screws drive upward, invisible |
-| Kicker, 21" | 2 | 2 (tail only) | wall end only | inner face |
-| **Total** | | **40** | | |
+| Kicker, 21" | 2 | none | — | tails toe-screw up into the cleat at assembly |
+| **Total** | | **36** | | |
 
 Ten minutes of repetitive work — and it converts the most awkward fastening of the whole build into easy guided driving. Tick each piece off as you drill it; at assembly time there should be nothing left to think about but driving screws.
 
@@ -169,9 +168,11 @@ Stand the goalpost out from the wall so the gap between ledger front face and be
 
 ### Step 7 — Tie the legs to the wall with the kickers
 
-First, give each kicker tail its landing pad — one on BOTH sides, identically. (Why: studs repeat every 16", but the kicker tails sit ~53" apart, where the bench needs them — and 53 isn't a multiple of 16, so the tails usually land in empty bays. Blocks on both sides remove the guesswork and keep the build symmetric.) Each block: a 16" 2×4 flat against the wall at kicker height — top edge level with the cleat's bottom, the 8½" reference — spanning the two studs nearest that kicker's tail, two 2½" screws into each stud. A block also beats a lucky stud: the load spreads across two studs, and if a stud does sit behind a tail, the block simply laps over it.
+The kicker tails need solid wood to fasten into, and the wall can't promise a stud behind them (studs repeat every 16"; the tails sit ~53" apart — not a multiple of 16). The fix is already installed: **the shelf cleat**. It's screwed into every stud, and its bottom edge (8½") sits exactly at kicker-top height — the tails tuck directly beneath it. Each tail fastens **upward into the cleat's underside**, the cleat carries the load into the whole row of studs, and nothing extra appears on your wall.
 
-Now set each kicker — both sides identical, tails butted against their blocks. Height comes from the level, not the floor: hold the level across from the cleat's bottom edge (the 8½" reference, already leveled in Step 1) and mark the leg — the kicker's top edge goes on that mark, flush with the block's top. Screw the kicker to the leg with three 2½" screws (through the 1½" kicker into the leg), then fasten its tail through the two pocket holes you drilled at cutting time — a 2½" pocket screw in each, into the block. The jig already set the angle; just seat the long square bit in the pocket and drive until snug. (Forgot a pocket? Clamp the jig on in place, or fall back on a toe-screw — taught next step.)
+Set each kicker on edge against its leg's inner face, tail slid back under the cleat until it touches the wall, top edge flush against the cleat's underside — the cleat itself is your height gauge, already dead level. Fasten in two moves: three 2½" screws through the kicker's face into the leg, then the tail — drill two ⅛" pilots angled ~45° upward through the kicker's inner face about ¾" from the end (pilot alert: you're near the board's end), and drive two 2½" toe-screws **up into the cleat's underside**. Both sides identical; the screws vanish under the shelf.
+
+**Toe-screwing, your new skill:** start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the board's side into the wood behind. It feels wrong the first time and works every time.
 
 *(Belt-and-suspenders note: Step 10's shelf deck will also tie the legs to the wall through the cleat — but solid wood at both ends of the kicker is how you build a bench you never think about again.)*
 
