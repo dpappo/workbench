@@ -27,7 +27,8 @@ Most workbenches are freestanding tables: four legs, with all the stability comi
 | 2×4×8 SPF stud | 10 | $3.78 | $37.80 |
 | ¾" 4×8 standard spruce plywood | 1 | $59.98 | $59.98 |
 | ⅛" 48"×48" hardboard panel | 1 | $10.89 | $10.89 |
-| Paulin 5/16" × 4" hex lag bolts, zinc — **plus 12 matching 5/16" washers, one per lag** (~$3) | 12 | $1.18 | $17.16 |
+| Paulin 5/16" × 4" hex lag bolts, zinc | 12 | $1.18 | $14.16 |
+| 5/16" flat washers (one under every lag head) | 12 | ~$0.25 | ~$3.00 |
 | PaulinPRO #8 × 2½" screws, 150 pc | 1 | $25.88 | $25.88 |
 | Paulin #8 × 1¼" construction screws, 100 pc | 1 | $9.48 | $9.48 |
 | Kreg 2½" coarse Blue-Kote pocket screws, 50 ct | 1 | $11.99 | $11.99 |
