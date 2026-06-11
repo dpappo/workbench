@@ -24,6 +24,7 @@ The bench bolts its back edge directly to your wall framing (the studs behind un
 |----------|------------|
 | **[Interactive 3D build guide](https://dpappo.github.io/workbench/)** | Step through all 26 steps in 3D — prep, cutting, and assembly, with dimension callouts, per-step tool/fastener chips, joint cross-sections, and to-scale cut-plan diagrams |
 | **[Written build guide](stud-anchored-workbench-build-guide.md)** | Full printable reference: buy list, cut order, geometry checks, and every step in prose |
+| **[Buy list / shopping checklist](buy-list.md)** | Materials and tools with homedepot.ca links — strike items off as you buy them |
 
 The 3D guide is served from [`index.html`](index.html) via GitHub Pages. The markdown guide is the long-form plan you can read offline or print.
 
@@ -48,6 +49,7 @@ Roughly **$172** for the bench itself, **~$216** with pegboard, plus a **$49** K
 .
 ├── index.html                          # Interactive 3D build guide (GitHub Pages)
 ├── stud-anchored-workbench-build-guide.md   # Full written build plan
+├── buy-list.md                         # Shopping checklist (strike off as you buy)
 ├── assets/workbench.png                # Photo of the finished bench
 └── .github/workflows/pages.yml         # Deploys the 3D guide to GitHub Pages
 ```
