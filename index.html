@@ -241,7 +241,7 @@ const STEPS = [
 <p><b>Two terms:</b> a <b>crosscut</b> goes across a board; a <b>rip</b> runs along a sheet's length. Your blade eats ~⅛" per cut — the <b>kerf</b> — and every diagram already budgets for it (that's why some dimensions look oddly precise, like 23⅞").</p>
 <p><b>How to make a straight cut:</b> measure, mark a small V (a lone tick wanders), draw the line through it with the rafter square. Support the board so the offcut can fall free — never support both sides of a cut, or the closing gap pinches the blade. Set blade depth to poke ~¼" below the wood. Cut on the <b>waste side</b> of the line, guiding the saw's base against the rafter square. For the long plywood rips, clamp a straight 2×4 to the sheet as a guide rail and support the sheet on scrap 2×4s on the floor.</p>
 <p><b>Cutting order</b> (offcuts feed the next cuts): studs 1–6 each give one 60" piece, then a 19½" joist from the offcut. Studs 7–8 give the four 34½" legs, then three 10½" shelf joists from their offcuts. Stud 9: two 21" kickers, two 16" wall blocks, and the optional centre post (cut that one last, to fit). Stud 10 stays whole — insurance. <b>Measure each offcut before cutting from it.</b></p>
-<p><b>Then drill the pocket holes — while every piece is still loose on the bench.</b> Jig set to 1½" material, collar on the stepped bit to match. Drill: <b>two pockets in each end of all six 19½" top joists</b> (both pockets on the same wide face), <b>two in each end of the three 10½" shelf joists</b> (on the underside face, since they lie flat), and <b>two near the wall end of each 21" kicker</b> (on the inner face). That's 40 pockets, ten minutes of repetitive, satisfying work — and it converts the most awkward fastening of the whole build into easy downhill driving.</p>`],
+<p><b>Then drill the pocket holes — while every piece is still loose on the bench.</b> Jig set to 1½" material, collar on the stepped bit to match. Drill: <b>two pockets in each end of all six 19½" top joists</b> (both pockets on the same wide face), <b>two in each end of the three 10½" shelf joists</b> (on the underside face, since they lie flat), and <b>two near the wall end of each 21" kicker</b> (on the inner face). That's 40 pockets, ten minutes of repetitive, satisfying work — and it converts the most awkward fastening of the whole build into easy downhill driving. <b>The Cut plans tab has a to-scale pocket-hole map</b> showing exactly where every pocket lands on every piece — drill from the map, tick them off, and assembly becomes pure driving.</p>`],
 
 ['Mark the ledger line — 34½"',
 `<p>The red line on the studs is your first layout line: <b>34½" — the top of the ledger</b>, which puts the finished surface at 36⅛" after the 1½" top and ⅛" hardboard are added.</p>
@@ -782,6 +782,42 @@ function card(title, body, note){
   return '<h2>'+title+'</h2>' + (note ? '<p class="note">'+note+'</p>' : '') + '<div class="card">'+body+'</div>';
 }
 
+// ---- pocket-hole map: where all 40 pockets go, drawn to scale ----
+function pocketSVG(){
+  const S = 12;                 // px per inch
+  const BH = 3.5*S;             // board face height (42px)
+  const rows = [
+    { len:19.5, name:'TOP JOIST — 19½"', qty:'× 6 pieces', ends:'both', face:'all 4 pockets on the SAME wide face', count:'= 24 pockets' },
+    { len:10.5, name:'SHELF JOIST — 10½"', qty:'× 3 pieces', ends:'both', face:'on the UNDERSIDE face (screws drive up, invisible)', count:'= 12 pockets' },
+    { len:21,   name:'KICKER — 21"', qty:'× 2 pieces', ends:'left', face:'on the INNER face, WALL end only (tail end)', count:'= 4 pockets' }
+  ];
+  let s = '<svg width="980" height="'+(rows.length*84+18)+'" viewBox="0 0 980 '+(rows.length*84+18)+'">';
+  rows.forEach(function(r, i){
+    const y0 = 14 + i*84, W = r.len*S, x0 = 10;
+    s += '<rect x="'+x0+'" y="'+y0+'" width="'+W+'" height="'+BH+'" rx="2" fill="'+C.part+'"/>';
+    // pocket pairs: centres 1¾" in from the end, 1" and 2½" from the long edges
+    const endsX = r.ends === 'both' ? [x0+1.75*S, x0+W-1.75*S] : [x0+1.75*S];
+    endsX.forEach(function(px){
+      [1, 2.5].forEach(function(ey){
+        s += '<ellipse cx="'+px+'" cy="'+(y0+ey*S)+'" rx="11" ry="5" fill="#1d2125" stroke="'+C.cut+'" stroke-width="1.5"/>';
+      });
+    });
+    // arrows showing screw exit direction
+    if (r.ends === 'both'){
+      s += '<text x="'+(x0-4)+'" y="'+(y0+BH/2+4)+'" text-anchor="end" font-size="11" fill="'+C.cut+'">&#8592;</text>';
+      s += '<text x="'+(x0+W+4)+'" y="'+(y0+BH/2+4)+'" font-size="11" fill="'+C.cut+'">&#8594;</text>';
+    } else {
+      s += '<text x="'+(x0-4)+'" y="'+(y0+BH/2+4)+'" text-anchor="end" font-size="11" fill="'+C.cut+'">&#8592; wall</text>';
+      s += '<text x="'+(x0+W+4)+'" y="'+(y0+BH/2+4)+'" font-size="11" fill="'+C.muted+'">leg end — no pockets</text>';
+    }
+    // labels at right
+    s += '<text x="380" y="'+(y0+12)+'" font-size="13" font-weight="700" fill="'+C.light+'">'+r.name+' <tspan fill="'+C.muted+'" font-weight="400">'+r.qty+'</tspan> <tspan fill="'+C.cut+'" font-weight="700">'+r.count+'</tspan></text>';
+    s += '<text x="380" y="'+(y0+30)+'" font-size="12" fill="'+C.muted+'">2 pockets per marked end — '+r.face+'</text>';
+    s += '<text x="380" y="'+(y0+46)+'" font-size="12" fill="'+C.muted+'">centres ~1¾&quot; from the end; 1&quot; and 2½&quot; in from the long edges</text>';
+  });
+  return s + '</svg>';
+}
+
 const studDefs = [
   ['Stud 1', [[60,'LEDGER','60"'],[19.5,'Top joist','19½"']]],
   ['Stud 2', [[60,'FRONT BEAM — half 1 of 2','60"'],[19.5,'Top joist','19½"']]],
@@ -810,6 +846,10 @@ function renderCuts(){
   html += card('The ten 2×4s — one bar per stud, to scale',
     studHtml,
     'Order: studs 1–6 each give one 60&quot; piece, then a 19½&quot; joist from the offcut. Studs 7–8 give the legs, then the shelf joists from their offcuts. Stud 9 carries the small parts — cut the post last, to the gap you measure in place (Step 18 of the build). Stud 10 stays whole.');
+
+  html += card('The pocket-hole map — drill all 40 before assembly',
+    pocketSVG(),
+    'Jig set to <b>1½&quot; material</b>, collar on the stepped bit to match, jig flush with the board end so the screw exits the end grain. Each pair sits <b>1&quot; and 2½&quot; in from the board&#39;s long edges</b> — the Kreg 320&#39;s two guides land there automatically when the jig is centred on the 3½&quot; face. Keep every pair on the SAME face per piece so all driving happens from one side. Tally: 6 top joists × 4 + 3 shelf joists × 4 + 2 kickers × 2 = <b>40 pockets</b>.');
 
   html += card('The plywood sheet — ¾&quot; × 48&quot; × 96&quot;, cuts numbered in order',
     sheetSVG(96, 48, [

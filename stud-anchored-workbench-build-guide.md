@@ -94,7 +94,18 @@ Offcuts feed the next cuts — verified to work even with 92⅝" studs:
 
 Measure each offcut before cutting from it.
 
-**Then drill the pocket holes — while every piece is still loose on the bench.** Jig set to 1½" material. Drill two pockets in each end of all six 19½" top joists (both on the same wide face), two in each end of the three 10½" shelf joists (on the underside face, since they lie flat), and two near the wall end of each 21" kicker (on the inner face). That's 40 pockets, ten minutes of repetitive work — and it converts the most awkward fastening of the whole build into easy guided driving.
+### The pocket-hole map — drill all 40 before assembly
+
+Do this immediately after cutting, while every piece is still loose on the bench. Jig set to **1½" material**, collar on the stepped bit to match, jig flush with the board end so the screw exits the end grain. Each pair of pockets sits **1" and 2½" in from the board's long edges** (the Kreg 320's two guides land there automatically when the jig is centred on the 3½" face), with centres about 1¾" back from the end. Keep each piece's pockets on the SAME face so all driving happens from one side.
+
+| Piece | Qty | Pockets | Where | Face |
+|-------|-----|---------|-------|------|
+| Top joist, 19½" | 6 | 2 per end (4 each) | both ends | all four on the same wide face |
+| Shelf joist, 10½" | 3 | 2 per end (4 each) | both ends | underside face — screws drive upward, invisible |
+| Kicker, 21" | 2 | 2 (tail only) | wall end only | inner face |
+| **Total** | | **40** | | |
+
+Ten minutes of repetitive work — and it converts the most awkward fastening of the whole build into easy guided driving. Tick each piece off as you drill it; at assembly time there should be nothing left to think about but driving screws.
 
 **Plywood sequence:**
 
