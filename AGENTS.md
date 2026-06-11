@@ -1,0 +1,14 @@
+## Learned User Preferences
+
+- Ask before committing unless the user explicitly says to commit and/or push.
+- README should be a project overview for developers landing on the repo, not the full build plan.
+- README should credit Claude Code for the design, link to the interactive 3D guide, and include the finished bench photo (`assets/workbench.png`).
+- The full printable build plan belongs in `stud-anchored-workbench-build-guide.md`, not in README.
+
+## Learned Workspace Facts
+
+- This repo (`dpappo/workbench`) documents a DIY stud-anchored garage workbench — documentation and an interactive guide, not an application or library.
+- GitHub remote: https://github.com/dpappo/workbench; default branch is `main`; repo is public for GitHub Pages on the free tier.
+- Interactive 3D build guide is `index.html`, live at https://dpappo.github.io/workbench/.
+- GitHub Pages deploys via GitHub Actions (`.github/workflows/pages.yml`); `.nojekyll` is present to skip Jekyll processing.
+- Key artifacts: `stud-anchored-workbench-build-guide.md` (written guide), `index.html` (3D guide), `assets/workbench.png` (finished bench photo).
