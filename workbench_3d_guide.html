@@ -309,6 +309,17 @@ const STEPS = [
 <p><b>Set the height with the level, not the floor:</b> hold the level across from the <b>cleat's bottom edge</b> (that's the 8½" reference, already dead level from Step 6) and mark the leg — the kicker's top edge goes on that mark.</p>
 <p>Screw each kicker to its leg with <b>three 2½" screws</b> through the kicker's face into the leg. Then fasten the wall tail through the <b>two pocket holes you drilled at cutting time</b>: a 2½" Kreg pocket screw in each, driven into the stud on a stud side, into the block on a blocked side. The jig already set the perfect angle — just seat the long square driver bit in the pocket and drive until snug.</p>
 <p>The blocked-side kicker butts the block rather than the wall, so its tail sits 1½" farther forward than the stud-side tail. That asymmetry is expected; both kickers still brace the legs because each tail is screwed into solid wood.</p>
+<svg class="mini" width="360" height="118" viewBox="0 0 360 118">
+<rect x="252" y="10" width="64" height="98" fill="#5c666e"/>
+<rect x="12" y="64" width="240" height="38" fill="#c9a36b"/>
+<path d="M158 64 L196 64 L250 98 L212 98 Z" fill="#1d2125" opacity="0.85"/>
+<line x1="172" y1="70" x2="300" y2="96" stroke="#ffd29f" stroke-width="3"/>
+<circle cx="172" cy="70" r="4.5" fill="#ffd29f"/>
+<text x="14" y="24" font-size="12" fill="#9aa3ab">side view: the jig drills an angled pocket into the kicker's face;</text>
+<text x="14" y="40" font-size="12" fill="#9aa3ab">the screw exits the board's end and buries deep in the stud/block</text>
+<text x="20" y="90" font-size="12" fill="#1d2125" font-weight="700">kicker</text>
+<text x="258" y="30" font-size="12" fill="#e9e4da" font-weight="700">stud</text>
+</svg>
 <p class="why">Forgot to drill a pocket? No problem — clamp the jig onto the kicker right where it sits, or fall back on a toe-screw (taught next step). The pocket hole is just a toe-screw with training wheels.</p>
 <p class="why">What you built: the bottom of each leg is now locked to the building. The frame can no longer swing in any direction — try it. (The shelf deck will soon tie everything together even more.)</p>`],
 
@@ -316,6 +327,18 @@ const STEPS = [
 `<p>Rest the doubled rail across the two kickers — its ends sit on them, and its top edge lands at <b>12"</b>, matching the cleat line. Check with the level across from the cleat.</p>
 <p>Flush its ends with the frame's outside edges, then <b>toe-screw down into each kicker, two 2½" screws per end</b>. (The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out. Your one freehand angled joint of the build.)</p>
 <p><b>Toe-screwing, the manual version of a pocket screw:</b> start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the rail's side down into the kicker below. It feels wrong the first time and works every time — and after driving forty guided pocket screws, your hands will already know the angle.</p>
+<svg class="mini" width="360" height="118" viewBox="0 0 360 118">
+<rect x="90" y="12" width="130" height="56" fill="#b8905a"/>
+<rect x="12" y="72" width="336" height="34" fill="#c9a36b"/>
+<line x1="118" y1="30" x2="125" y2="44" stroke="#6e7780" stroke-width="3" stroke-dasharray="3 3"/>
+<line x1="125" y1="44" x2="172" y2="98" stroke="#ffd29f" stroke-width="3"/>
+<circle cx="118" cy="30" r="4.5" fill="#ffd29f"/>
+<text x="230" y="30" font-size="12" fill="#9aa3ab">1. start straight-in so it bites</text>
+<text x="230" y="46" font-size="12" fill="#9aa3ab">2. tilt to ~45° and drive through</text>
+<text x="230" y="62" font-size="12" fill="#9aa3ab">    into the wood below</text>
+<text x="100" y="44" font-size="12" fill="#1d2125" font-weight="700">rail</text>
+<text x="20" y="93" font-size="12" fill="#1d2125" font-weight="700">kicker</text>
+</svg>
 <p class="why">Notice the rail floats 9" back from the bench front — that's your knee room, by design. It isn't attached to the legs at all; the kickers carry it.</p>`],
 
 ['Optional: the centre post',
@@ -581,10 +604,10 @@ const ANNOTATIONS = [
   makeAnnotation({ steps:[5], text:'34½" line\nledger top', pos:[65,-1,36.5], line:[[0,-0.15,34.5],[60,-0.15,34.5]] }),
   makeAnnotation({ steps:[6,8,17], text:'12" line\ncleat/rail top', pos:[65,-1,14.5], line:[[0,-0.2,12],[60,-0.2,12]] }),
   makeAnnotation({ steps:[6,16], text:'8½" reference\ncleat bottom + kicker top', pos:[20,8,7], line:[[0,1.55,8.5],[60,1.55,8.5]] }),
-  makeAnnotation({ steps:[8], text:'#8 × 2½" screws\n2 high/low per stud', pos:[33,5,17], dots:[[4,1.7,10.1],[20,1.7,10.1],[36,1.7,10.1],[52,1.7,10.1]] }),
+  makeAnnotation({ steps:[8], text:'#8 × 2½" screws\n2 high/low per stud', pos:[33,5,17], dots:[[4,1.9,9.5],[4,1.9,11.2],[20,1.9,9.5],[20,1.9,11.2],[36,1.9,9.5],[36,1.9,11.2],[52,1.9,9.5],[52,1.9,11.2]] }),
   makeAnnotation({ steps:[13], text:'19½" spacer joists\nset the bench depth', pos:[30,12,40], line:[[6,1.5,36],[6,21,36]] }),
   makeAnnotation({ steps:[15], text:'left tail lands on stud\nno block needed here', pos:[14,7,14], line:[[4.25,0.3,8.5],[4.25,17,8.5]] }),
-  makeAnnotation({ steps:[15,16], text:'right tail lands in a bay\nblock creates solid wood', pos:[44,8,15], line:[[58,1.7,8.5],[58,17,8.5]] }),
+  makeAnnotation({ steps:[15,16], text:'right tail lands in a bay\nblock creates solid wood', pos:[44,8,15], line:[[55.75,1.7,8.5],[55.75,17,8.5]] }),
   makeAnnotation({ steps:[16], text:'pocket-screw tail\ninto stud or block', pos:[34,17,8], dots:[[4.25,1.5,6.75],[55.75,2,6.75]] }),
   makeAnnotation({ steps:[17], text:'rail top also 12"\nlevel from cleat', pos:[30,19,17], line:[[0,12,12],[60,12,12]] }),
   makeAnnotation({ steps:[19], text:'wall-end pocket screws\ninto the ledger', pos:[8,5,41], line:[[15,1.5,34.5],[15,5,38]] }),
