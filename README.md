@@ -35,7 +35,7 @@ The 3D guide is served from [`index.html`](index.html) via GitHub Pages. The mar
 - **Stud-anchored ledger** — the back of the top hangs off the wall; no rear legs
 - **Doubled 2×4 frame** — beam and legs are two boards screwed face-to-face for stiffness
 - **Kickers + shelf diaphragm** — legs tie back to the wall; the shelf deck locks the frame against racking
-- **Pocket-hole joinery** — all 40 angled joints (joists, kickers) use a Kreg 320 jig, drilled while parts are loose on the bench; only the rail and optional post keep old-school toe-screws
+- **Pocket-hole joinery** — all 36 angled joints (the joists) use a Kreg 320 jig, drilled while parts are loose on the bench; the kicker tails, rail, and optional post use old-school toe-screws
 - **Replaceable hardboard top** — sacrificial wear surface; swap it for ~$11 when it gets beat up
 - **Open stud bays** — pegboard mounts directly to studs; no spacer strips needed
 

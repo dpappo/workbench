@@ -330,9 +330,9 @@ const STEPS = [
 
 ['Set the shelf rail',
 `<p>Rest the doubled rail across the two kickers — its ends sit on them, and its top edge lands at <b>12"</b>, matching the cleat line. Check with the level across from the cleat.</p>
-<p>Flush its ends with the frame's outside edges, then <b>toe-screw down into each kicker, two 2½" screws per end</b>. (The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out. Your one freehand angled joint of the build.)</p>
-<p><b>Pilot alert:</b> these screws start close to the rail's ends, where wood splits easily — drill a <b>⅛" pilot</b> at your chosen angle for each before driving. One of only two non-lag pilot moments in the build.</p>
-<p><b>Toe-screwing, the manual version of a pocket screw:</b> start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the rail's side down into the kicker below. It feels wrong the first time and works every time — and after driving forty guided pocket screws, your hands will already know the angle.</p>
+<p>Flush its ends with the frame's outside edges, then <b>toe-screw down into each kicker, two 2½" screws per end</b>. (The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out. Toe-screws again, same move as the kicker tails.)</p>
+<p><b>Pilot alert:</b> these screws start close to the rail's ends, where wood splits easily — drill a <b>⅛" pilot</b> at your chosen angle for each before driving. The second of three non-lag pilot moments in the build.</p>
+<p><b>Toe-screwing, round two:</b> straight-in for a few turns so it bites, tilt to ~45°, drive through the rail's side down into the kicker below — after the four under the cleat, your hands already know the angle.</p>
 <svg class="mini" width="360" height="118" viewBox="0 0 360 118">
 <rect x="90" y="12" width="130" height="56" fill="#b8905a"/>
 <rect x="12" y="72" width="336" height="34" fill="#c9a36b"/>
@@ -349,7 +349,7 @@ const STEPS = [
 
 ['Optional: the centre post',
 `<p>If you plan to load the shelf heavily (filament boxes add up), give the rail a mid-span helper.</p>
-<p><b>Measure the actual gap</b> from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope. Cut the post to that exact length, stand it under the midpoint, and toe-screw it top and bottom (same technique you just used on the rail; or drill two pockets in the post's face with the jig if you prefer). <b>Pilot alert:</b> toe-screws near the post's ends want a ⅛" pilot too — the second and last non-lag pilot moment of the build.</p>
+<p><b>Measure the actual gap</b> from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope. Cut the post to that exact length, stand it under the midpoint, and toe-screw it top and bottom (same technique you just used on the rail; or drill two pockets in the post's face with the jig if you prefer). <b>Pilot alert:</b> toe-screws near the post's ends want a ⅛" pilot too — the third and last non-lag pilot moment of the build.</p>
 <p class="why">Cheap insurance: a doubled 2×4 on edge barely sags over this span, but with the post it simply can't. Skip it if your shelf will hold light stuff.</p>`],
 
 ['Install the six top joists',
@@ -398,7 +398,7 @@ const STEP_TOOLS = {
   1: [['lumber','2×4s'], ['wall','Open studs'], ['top','Plywood + hardboard']],
   2: [['lumber','10 studs'], ['lag','5/16" × 4" lags'], ['screw','2½" screws'], ['shortScrew','1¼" screws'], ['jig','Kreg 320 + pocket screws'], ['driver','Impact driver']],
   3: [['tape','Tape measure'], ['stool','Stool'], ['box','9" knee box']],
-  4: [['saw','Circular saw'], ['square','Rafter square'], ['jig','Kreg jig — 40 pockets'], ['tape','Tape + pencil'], ['eye','Eye/ear protection']],
+  4: [['saw','Circular saw'], ['square','Rafter square'], ['jig','Kreg jig — 36 pockets'], ['tape','Tape + pencil'], ['eye','Eye/ear protection']],
   5: [['tape','34½" mark'], ['level','24"+ level'], ['pencil','Pencil']],
   6: [['tape','12" mark'], ['level','Level across'], ['pencil','Pencil line']],
   7: [['lumber','60" ledger'], ['drill','7/32" pilot bit'], ['lag','8 lag bolts'], ['driver','½" socket']],
@@ -783,7 +783,7 @@ function card(title, body, note){
   return '<h2>'+title+'</h2>' + (note ? '<p class="note">'+note+'</p>' : '') + '<div class="card">'+body+'</div>';
 }
 
-// ---- pocket-hole map: where all 40 pockets go, drawn to scale ----
+// ---- pocket-hole map: where all 36 pockets go, drawn to scale ----
 function pocketSVG(){
   const S = 12;                 // px per inch
   const BH = 3.5*S;             // board face height (42px)

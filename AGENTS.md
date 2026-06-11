@@ -13,4 +13,4 @@
 - Interactive 3D build guide is `index.html`, live at https://dpappo.github.io/workbench/.
 - GitHub Pages deploys via GitHub Actions (`.github/workflows/pages.yml`); `.nojekyll` is present to skip Jekyll processing.
 - Key artifacts: `stud-anchored-workbench-build-guide.md` (written guide), `index.html` (3D guide), `buy-list.md` (Home Depot shopping checklist with homedepot.ca links), `assets/workbench.png` (finished bench photo).
-- Frame joinery uses a Kreg 320 pocket-hole jig (40 guided joints); the bench is still stud-anchored to the wall with lag bolts.
+- Frame joinery uses a Kreg 320 pocket-hole jig (36 guided joints — joists only); kicker tails toe-screw up into the cleat (no wall blocks); the bench is still stud-anchored to the wall with lag bolts.

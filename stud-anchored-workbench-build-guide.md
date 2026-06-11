@@ -180,9 +180,9 @@ Set each kicker on edge against its leg's inner face, tail slid back under the c
 
 ### Step 8 — Set the shelf rail
 
-Rest the doubled rail across the two kickers (its ends sit on them; top of rail lands at 12", matching the cleat line — check with the level). Flush its ends with the frame's outside edges, then toe-screw down into each kicker, two 2½" screws per end. **Pilot alert:** these screws start close to the rail's ends, where wood splits easily — drill a ⅛" pilot at your chosen angle before driving each. The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out: this is your one freehand angled joint of the build.
+Rest the doubled rail across the two kickers (its ends sit on them; top of rail lands at 12", matching the cleat line — check with the level). Flush its ends with the frame's outside edges, then toe-screw down into each kicker, two 2½" screws per end. **Pilot alert:** these screws start close to the rail's ends, where wood splits easily — drill a ⅛" pilot at your chosen angle before driving each. The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out: toe-screws again, same move as the kicker tails.
 
-**Toe-screwing, the manual version of a pocket screw:** start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the rail's side down into the kicker. It feels wrong the first time and works every time — and after forty guided pocket screws, your hands will already know the angle.
+**Toe-screwing, round two:** straight-in for a few turns so it bites, tilt to ~45°, drive through the rail's side down into the kicker — after the four under the cleat, your hands already know the angle.
 
 If you want the optional centre post, measure the actual gap from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope — cut the post to that length, stand it, and toe-screw it top and bottom (⅛" pilots here too — the screws sit near the post's ends). Cheap insurance against sag when the shelf is loaded.
 

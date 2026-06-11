@@ -28,8 +28,8 @@ Shopping list for the stud-anchored workbench. Outstanding items are listed firs
 | Tool | Price | Status / notes |
 |------|-------|----------------|
 | 3/8" twist bit | — | Check your bit set — most include one. Spun **in reverse** at the mouth of a pilot hole, it chamfers a clean screw-head recess (the no-countersink trick used in Steps 22–24) |
-| ~~[DEWALT 12" trigger clamp, 100 lb, 2.43" throat](https://www.homedepot.ca/product/dewalt-12-inch-100-lb-trigger-clamp-w-2-43-inch-throat-depth/1000812311)~~ | — | **Have** — holds the Kreg jig to each board while drilling the 40 pockets; also clamps laminations and the plywood rip guide rail |
-| ~~[Kreg 320 pocket-hole jig](https://www.homedepot.ca/product/kreg-tool-company-pocket-hole-jig-320/1001491607)~~ | — | **Have** — drills the 40 guided angled joints; includes stepped bit and driver bit |
+| ~~[DEWALT 12" trigger clamp, 100 lb, 2.43" throat](https://www.homedepot.ca/product/dewalt-12-inch-100-lb-trigger-clamp-w-2-43-inch-throat-depth/1000812311)~~ | — | **Have** — holds the Kreg jig to each board while drilling the 36 pockets; also clamps laminations and the plywood rip guide rail |
+| ~~[Kreg 320 pocket-hole jig](https://www.homedepot.ca/product/kreg-tool-company-pocket-hole-jig-320/1001491607)~~ | — | **Have** — drills the 36 guided angled joints; includes stepped bit and driver bit |
 | ~~Drill~~ | — | **Have.** Will also drive the screws (see note below) |
 | ~~Impact driver~~ | — | **Skipping** — driving screws and lags with the drill instead |
 | ~~Circular saw~~ | — | **Have** |

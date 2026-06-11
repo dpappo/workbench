@@ -142,11 +142,12 @@ const PARTS = [
   // spacer joists (ghost) during positioning + squaring
   { b:[6,1.5,31, 1.5,19.5,3.5],    c:COL.framing, appear:13, only:[13,14], ghost:true },
   { b:[52.5,1.5,31, 1.5,19.5,3.5], c:COL.framing, appear:13, only:[13,14], ghost:true },
-  // wall blocks (one per side, each spanning two studs), then kickers butting the blocks
-  { b:[4,0,5, 16,1.5,3.5],    c:COL.framing, appear:15 },
-  { b:[50.5,0,5, 16,1.5,3.5], c:COL.framing, appear:15 },
-  { b:[3.5,1.5,5, 1.5,21,3.5], c:COL.framing, appear:16 },
-  { b:[55,1.5,5, 1.5,21,3.5],  c:COL.framing, appear:16 },
+  // kickers: ghosted while positioning (step 15), solid when fastened (step 16).
+  // Tails tuck under the cleat and toe-screw UP into it — no wall blocks needed.
+  { b:[3.5,0,5, 1.5,21,3.5], c:COL.framing, appear:15, only:[15], ghost:true },
+  { b:[55,0,5, 1.5,21,3.5],  c:COL.framing, appear:15, only:[15], ghost:true },
+  { b:[3.5,0,5, 1.5,21,3.5], c:COL.framing, appear:16 },
+  { b:[55,0,5, 1.5,21,3.5],  c:COL.framing, appear:16 },
   // rail, post
   { b:[0,12,8.5, 60,3,3.5],       c:COL.framingDark, appear:17 },
   { b:[28.5,11.75,0, 1.5,3.5,8.5], c:COL.framing, appear:18 },
@@ -228,8 +229,8 @@ const STEPS = [
 <li>1 × Fibrex 4×8 white pegboard ($43.98, optional)</li>
 </ul>
 <p><b>Why three screw types?</b> The 2½" screws join 1½"-thick wood face-to-face. The 1¼" screws attach sheets. The pocket screws make the angled joints (next paragraph). The rule behind every fastener choice: <b>a screw must pass completely through the first piece and bite ~1" into the second.</b></p>
-<p><b>The angled joints.</b> Wherever a board's END meets another board's face — joist into ledger, kicker tail into its wall block — a straight screw has nothing to grab. This build uses <b>pocket holes</b>: the Kreg jig drills a guided, angled channel into the board's side, and a pocket screw drives through it into the wood behind. Foolproof angle, no splitting, drilled comfortably at the bench before assembly. Two joints (the rail ends and the optional post) instead use <b>toe-screws</b> — the freehand version of the same idea, taught in Step 17. And where the first piece is a doubled (3") member, the joint gets a 4" <b>lag bolt</b> (thick hex-head screw driven with a socket, washer under the head).</p>
-<p><b>Pilot holes, the one rule:</b> lags always get a 7/32" pilot. Regular construction screws are self-drilling in softwood and need none — <i>except</i> within ~1½" of a board's end, where a ⅛" pilot prevents splitting. The steps call out every pilot moment; there are only four in the whole build (two lag steps, the rail toe-screws, the post).</p>
+<p><b>The angled joints.</b> Wherever a board's END meets another board's face — like a joist meeting the ledger — a straight screw has nothing to grab. This build uses <b>pocket holes</b>: the Kreg jig drills a guided, angled channel into the board's side, and a pocket screw drives through it into the wood behind. Foolproof angle, no splitting, drilled comfortably at the bench before assembly. A few joints — the kicker tails, the rail ends, and the optional post — instead use <b>toe-screws</b>, the freehand version of the same idea, taught in Step 16. And where the first piece is a doubled (3") member, the joint gets a 4" <b>lag bolt</b> (thick hex-head screw driven with a socket, washer under the head).</p>
+<p><b>Pilot holes, the one rule:</b> lags always get a 7/32" pilot. Regular construction screws are self-drilling in softwood and need none — <i>except</i> within ~1½" of a board's end, where a ⅛" pilot prevents splitting. The steps call out every pilot moment; there are only five in the whole build (two lag steps, the kicker tails, the rail toe-screws, the post).</p>
 <p><b>Tools:</b> drill (smooth — for holes) + impact driver (hammers as it spins — for screws and lags) with a ½" socket on a ¼"-hex adapter; <b>Kreg 320 pocket-hole jig ($48.97)</b> — set to 1½" material, with its stepped bit in the drill; a circular saw (5½" or 7¼" — both handle every cut); 7" rafter square (90° lines + saw guide); a 24"+ level; 7/32" twist bit (lag pilots), ⅛" twist bit (near-end pilots), and a 3/8" twist bit — spun <b>in reverse</b> it chamfers a clean screw-head recess, replacing a countersink bit; tape, pencil, safety glasses, hearing protection.</p>`],
 
 ['PREP · The seating check',
@@ -241,8 +242,8 @@ const STEPS = [
 `<p>Do all the cutting in one session, before any assembly — open the <b>Cut plans</b> tab (top-left) for a to-scale diagram of every stud and sheet with the cuts numbered in order.</p>
 <p><b>Two terms:</b> a <b>crosscut</b> goes across a board; a <b>rip</b> runs along a sheet's length. Your blade eats ~⅛" per cut — the <b>kerf</b> — and every diagram already budgets for it (that's why some dimensions look oddly precise, like 23⅞").</p>
 <p><b>How to make a straight cut:</b> measure, mark a small V (a lone tick wanders), draw the line through it with the rafter square. Support the board so the offcut can fall free — never support both sides of a cut, or the closing gap pinches the blade. Set blade depth to poke ~¼" below the wood. Cut on the <b>waste side</b> of the line, guiding the saw's base against the rafter square. For the long plywood rips, clamp a straight 2×4 to the sheet as a guide rail and support the sheet on scrap 2×4s on the floor.</p>
-<p><b>Cutting order</b> (offcuts feed the next cuts): studs 1–6 each give one 60" piece, then a 19½" joist from the offcut. Studs 7–8 give the four 34½" legs, then three 10½" shelf joists from their offcuts. Stud 9: two 21" kickers, two 16" wall blocks, and the optional centre post (cut that one last, to fit). Stud 10 stays whole — insurance. <b>Measure each offcut before cutting from it.</b></p>
-<p><b>Then drill the pocket holes — while every piece is still loose on the bench.</b> Jig set to 1½" material, collar on the stepped bit to match. Drill: <b>two pockets in each end of all six 19½" top joists</b> (both pockets on the same wide face), <b>two in each end of the three 10½" shelf joists</b> (on the underside face, since they lie flat), and <b>two near the wall end of each 21" kicker</b> (on the inner face). That's 40 pockets, ten minutes of repetitive, satisfying work — and it converts the most awkward fastening of the whole build into easy downhill driving. <b>The Cut plans tab has a to-scale pocket-hole map</b> showing exactly where every pocket lands on every piece — drill from the map, tick them off, and assembly becomes pure driving.</p>`],
+<p><b>Cutting order</b> (offcuts feed the next cuts): studs 1–6 each give one 60" piece, then a 19½" joist from the offcut. Studs 7–8 give the four 34½" legs, then three 10½" shelf joists from their offcuts. Stud 9: two 21" kickers and the optional centre post (cut that one last, to fit) — a huge offcut remains as bonus scrap. Stud 10 stays whole — insurance. <b>Measure each offcut before cutting from it.</b></p>
+<p><b>Then drill the pocket holes — while every piece is still loose on the bench.</b> Jig set to 1½" material, collar on the stepped bit to match. Drill: <b>two pockets in each end of all six 19½" top joists</b> (both pockets on the same wide face) and <b>two in each end of the three 10½" shelf joists</b> (on the underside face, since they lie flat). That's 36 pockets, ten minutes of repetitive, satisfying work — and it converts the most awkward fastening of the whole build into easy downhill driving. <b>The Cut plans tab has a to-scale pocket-hole map</b> showing exactly where every pocket lands on every piece — drill from the map, tick them off, and assembly becomes pure driving.</p>`],
 
 ['Mark the ledger line — 34½"',
 `<p>The red line on the studs is your first layout line: <b>34½" — the top of the ledger</b>, which puts the finished surface at 36⅛" after the 1½" top and ⅛" hardboard are added.</p>
@@ -263,7 +264,7 @@ const STEPS = [
 ['Screw the shelf cleat to the studs',
 `<p>A 60" 2×4 flat against the wall, top edge on the 12" line — <b>two 2½" screws into each stud</b>.</p>
 <p>Use the same impact driver as the ledger step, but switch from lag bolts to <b>#8 × 2½" construction screws</b>. The small dark heads in the model are the screw pattern: two at each stud, one high and one low.</p>
-<p><b>No pilot holes needed here</b> — construction screws have self-drilling points made for softwood. The pilot-hole rule for this whole build: lag bolts always get a 7/32" pilot, and any regular screw landing within ~1½" of a board's end gets a ⅛" pilot to prevent splitting. Everywhere else in SPF, just drive. (Each step will say so when a pilot is needed — there are only two more: the rail and post toe-screws.)</p>
+<p><b>No pilot holes needed here</b> — construction screws have self-drilling points made for softwood. The pilot-hole rule for this whole build: lag bolts always get a 7/32" pilot, and any regular screw landing within ~1½" of a board's end gets a ⅛" pilot to prevent splitting. Everywhere else in SPF, just drive. (Each step will say so when a pilot is needed — there are only three more: the kicker tails, the rail, and the post.)</p>
 <p>It projects just 1½" from the wall, and that little edge is what carries the back of the lower shelf. No lags needed here; the shelf holds bins, not bench loads — the lags belong up top where the loads live.</p>`],
 
 ['Double the beam — stack the pair',
@@ -302,34 +303,36 @@ const STEPS = [
 <p><b>Square:</b> measure diagonally from each end of the ledger to the opposite end of the beam (the red dashed lines). <b>Equal numbers = square.</b> If not, slide the beam sideways until they match.</p>
 <p><b>Do this NOW</b> — when the joists go in (Step 19) they'll lock the frame with twelve screws, and after that, nothing nudges.</p>`],
 
-['Install the two wall blocks',
-`<p>The two kickers will run from the wall to each leg, low down — and each one needs solid wood to fasten its tail into. Your wall can't promise that: studs repeat every 16", but the kicker tails sit ~53" apart (where the <i>bench</i> needs them), and 53 isn't a multiple of 16 — so the tails land wherever they land, usually in an empty bay.</p>
-<p>Rather than gambling on stud positions, <b>give every tail its own landing pad</b>: one 16" 2×4 per side, laid flat against the wall at kicker height (top edge level with the cleat's bottom — the 8½" reference), each spanning the two studs nearest that kicker's tail. Two 2½" screws into each stud, four per block.</p>
-<p class="why">Why a block beats even a lucky stud: the tail's load spreads across TWO studs instead of one, both sides are built identically (no judgment calls, no asymmetry), and the kickers in the next step become interchangeable twins. If a stud happens to sit right behind a tail, the block simply laps over it — nothing changes.</p>`],
+['Position the kickers — they anchor to the cleat',
+`<p>The two kickers (shown ghosted in position) run from the wall to each leg, low down. Each tail needs solid wood to fasten into — but here's the wall's dirty secret: studs repeat every 16", the kicker tails sit ~53" apart (where the <i>bench</i> needs them), and 53 isn't a multiple of 16. The tails will usually land in empty bays.</p>
+<p><b>The elegant fix is already installed: the shelf cleat.</b> That 60" board from Step 8 is screwed into every stud, and its bottom edge (8½") sits exactly at kicker-top height — the tails tuck directly beneath it. So instead of adding anything to the wall, each tail will fasten <b>upward into the cleat's underside</b>, and the cleat carries the load into the whole row of studs.</p>
+<p>For now, just dry-fit: hold each kicker on edge against its leg's inner face, tail slid back under the cleat until it touches the wall, top edge level with the cleat's bottom. Confirm it sits flush under the cleat on both sides — same on the left as the right, perfectly symmetric, nothing extra on your wall.</p>
+<p class="why">Why this is as strong as anything: the cleat is fastened to four-plus studs, so a tail anchored to the cleat is anchored to all of them at once. And the joint hides completely under the shelf.</p>`],
 
 ['Fit the kickers',
-`<p>One 21" kicker per side, on edge, pressed against the leg's inner face, tail butted against its wall block. Both sides are identical — that's the point of the blocks.</p>
-<p><b>Set the height with the level, not the floor:</b> hold the level across from the <b>cleat's bottom edge</b> (that's the 8½" reference, already dead level from Step 6) and mark the leg — the kicker's top edge goes on that mark, flush with the block's top.</p>
-<p>Screw each kicker to its leg with <b>three 2½" screws</b> through the kicker's face into the leg. Then fasten the tail through the <b>two pocket holes you drilled at cutting time</b>: a 2½" Kreg pocket screw in each, driven into the block. The jig already set the perfect angle — just seat the long square driver bit in the pocket and drive until snug.</p>
+`<p>One 21" kicker per side, on edge, pressed against the leg's inner face, tail tucked under the cleat and touching the wall. Both sides identical.</p>
+<p><b>Set the height by the cleat, not the floor:</b> slide the kicker up until its top edge sits flush against the cleat's underside (the 8½" reference, already dead level from Step 6) — the cleat itself is your height gauge. Mark the leg along the kicker's top edge.</p>
+<p>Fasten in two moves. First, <b>three 2½" screws</b> through the kicker's face into the leg. Second, the tail: drill two <b>⅛" pilots</b> angled ~45° upward through the kicker's inner face, about ¾" from the tail end (pilots matter here — you're near the board's end), then drive two 2½" <b>toe-screws up into the cleat's underside</b>. The screws vanish under the shelf; nothing shows on the wall.</p>
+<p><b>Toe-screwing, your new skill:</b> start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the board's side into the wood behind. It feels wrong the first time and works every time.</p>
 <svg class="mini" width="360" height="118" viewBox="0 0 360 118">
-<rect x="252" y="10" width="64" height="98" fill="#5c666e"/>
-<rect x="12" y="64" width="240" height="38" fill="#c9a36b"/>
-<path d="M158 64 L196 64 L250 98 L212 98 Z" fill="#1d2125" opacity="0.85"/>
-<line x1="172" y1="70" x2="300" y2="96" stroke="#ffd29f" stroke-width="3"/>
-<circle cx="172" cy="70" r="4.5" fill="#ffd29f"/>
-<text x="14" y="24" font-size="12" fill="#9aa3ab">side view: the jig drills an angled pocket into the kicker's face;</text>
-<text x="14" y="40" font-size="12" fill="#9aa3ab">the screw exits the board's end and buries deep in the stud/block</text>
-<text x="20" y="90" font-size="12" fill="#1d2125" font-weight="700">kicker</text>
-<text x="258" y="30" font-size="12" fill="#e9e4da" font-weight="700">stud</text>
+<rect x="12" y="14" width="120" height="30" fill="#8a9099"/>
+<rect x="12" y="48" width="200" height="44" fill="#c9a36b"/>
+<line x1="148" y1="84" x2="100" y2="28" stroke="#ffd29f" stroke-width="3"/>
+<circle cx="148" cy="84" r="4.5" fill="#ffd29f"/>
+<text x="230" y="28" font-size="12" fill="#9aa3ab">side view at the tail: the cleat</text>
+<text x="230" y="44" font-size="12" fill="#9aa3ab">passes over the kicker; toe-screws</text>
+<text x="230" y="60" font-size="12" fill="#9aa3ab">drive up through the kicker</text>
+<text x="230" y="76" font-size="12" fill="#9aa3ab">into the cleat's underside</text>
+<text x="20" y="34" font-size="12" fill="#1d2125" font-weight="700">cleat</text>
+<text x="20" y="74" font-size="12" fill="#1d2125" font-weight="700">kicker</text>
 </svg>
-<p class="why">Forgot to drill a pocket? No problem — clamp the jig onto the kicker right where it sits, or fall back on a toe-screw (taught next step). The pocket hole is just a toe-screw with training wheels.</p>
-<p class="why">What you built: the bottom of each leg is now locked to the building. The frame can no longer swing in any direction — try it. (The shelf deck will soon tie everything together even more.)</p>`],
+<p class="why">What you built: the bottom of each leg is now locked to the building through the cleat — and into every stud the cleat touches. The frame can no longer swing in any direction; try it. Nothing extra shows on the wall.</p>`],
 
 ['Set the shelf rail',
 `<p>Rest the doubled rail across the two kickers — its ends sit on them, and its top edge lands at <b>12"</b>, matching the cleat line. Check with the level across from the cleat.</p>
-<p>Flush its ends with the frame's outside edges, then <b>toe-screw down into each kicker, two 2½" screws per end</b>. (The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out. Your one freehand angled joint of the build.)</p>
-<p><b>Pilot alert:</b> these screws start close to the rail's ends, where wood splits easily — drill a <b>⅛" pilot</b> at your chosen angle for each before driving. One of only two non-lag pilot moments in the build.</p>
-<p><b>Toe-screwing, the manual version of a pocket screw:</b> start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the rail's side down into the kicker below. It feels wrong the first time and works every time — and after driving forty guided pocket screws, your hands will already know the angle.</p>
+<p>Flush its ends with the frame's outside edges, then <b>toe-screw down into each kicker, two 2½" screws per end</b>. (The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out. Toe-screws again, same move as the kicker tails.)</p>
+<p><b>Pilot alert:</b> these screws start close to the rail's ends, where wood splits easily — drill a <b>⅛" pilot</b> at your chosen angle for each before driving. The second of three non-lag pilot moments in the build.</p>
+<p><b>Toe-screwing, round two:</b> straight-in for a few turns so it bites, tilt to ~45°, drive through the rail's side down into the kicker below — after the four under the cleat, your hands already know the angle.</p>
 <svg class="mini" width="360" height="118" viewBox="0 0 360 118">
 <rect x="90" y="12" width="130" height="56" fill="#b8905a"/>
 <rect x="12" y="72" width="336" height="34" fill="#c9a36b"/>
@@ -346,7 +349,7 @@ const STEPS = [
 
 ['Optional: the centre post',
 `<p>If you plan to load the shelf heavily (filament boxes add up), give the rail a mid-span helper.</p>
-<p><b>Measure the actual gap</b> from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope. Cut the post to that exact length, stand it under the midpoint, and toe-screw it top and bottom (same technique you just used on the rail; or drill two pockets in the post's face with the jig if you prefer). <b>Pilot alert:</b> toe-screws near the post's ends want a ⅛" pilot too — the second and last non-lag pilot moment of the build.</p>
+<p><b>Measure the actual gap</b> from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope. Cut the post to that exact length, stand it under the midpoint, and toe-screw it top and bottom (same technique you just used on the rail; or drill two pockets in the post's face with the jig if you prefer). <b>Pilot alert:</b> toe-screws near the post's ends want a ⅛" pilot too — the third and last non-lag pilot moment of the build.</p>
 <p class="why">Cheap insurance: a doubled 2×4 on edge barely sags over this span, but with the post it simply can't. Skip it if your shelf will hold light stuff.</p>`],
 
 ['Install the six top joists',
@@ -395,7 +398,7 @@ const STEP_TOOLS = {
   1: [['lumber','2×4s'], ['wall','Open studs'], ['top','Plywood + hardboard']],
   2: [['lumber','10 studs'], ['lag','5/16" × 4" lags'], ['screw','2½" screws'], ['shortScrew','1¼" screws'], ['jig','Kreg 320 + pocket screws'], ['driver','Impact driver']],
   3: [['tape','Tape measure'], ['stool','Stool'], ['box','9" knee box']],
-  4: [['saw','Circular saw'], ['square','Rafter square'], ['jig','Kreg jig — 40 pockets'], ['tape','Tape + pencil'], ['eye','Eye/ear protection']],
+  4: [['saw','Circular saw'], ['square','Rafter square'], ['jig','Kreg jig — 36 pockets'], ['tape','Tape + pencil'], ['eye','Eye/ear protection']],
   5: [['tape','34½" mark'], ['level','24"+ level'], ['pencil','Pencil']],
   6: [['tape','12" mark'], ['level','Level across'], ['pencil','Pencil line']],
   7: [['lumber','60" ledger'], ['drill','7/32" pilot bit'], ['lag','8 lag bolts'], ['driver','½" socket']],
@@ -406,8 +409,8 @@ const STEP_TOOLS = {
   12: [['lag','4" lags'], ['drill','7/32" pilots'], ['square','Rafter square'], ['driver','½" socket']],
   13: [['joist','Two 19½" spacers'], ['tape','19½" gap'], ['scrap','Temporary brace']],
   14: [['level','Level'], ['tape','Diagonal measure'], ['shim','Shim/trim']],
-  15: [['lumber','Two 16" wall blocks'], ['screw','2½" screws <span class="qty">4 per block</span>'], ['level','8½" reference']],
-  16: [['lumber','21" kickers'], ['level','8½" reference'], ['screw','2½" screws ×3 per leg'], ['jig','Pocket screws ×2 per tail']],
+  15: [['lumber','21" kickers (dry-fit)'], ['level','Cleat bottom = height gauge'], ['pencil','Mark the legs']],
+  16: [['screw','2½" screws ×3 per leg'], ['drill','⅛" pilots at tails'], ['screw','Toe-screws ×2 up into cleat']],
   17: [['lumber','Doubled shelf rail'], ['level','12" top edge'], ['screw','Toe-screws ×2 per end']],
   18: [['tape','Measure actual gap'], ['saw','Cut post to fit'], ['screw','Toe-screws']],
   19: [['joist','Six 19½" joists'], ['jig','Pocket screws ×4 each'], ['driver','Impact driver'], ['lag','Clear lag heads']],
@@ -609,8 +612,8 @@ const ANNOTATIONS = [
   makeAnnotation({ steps:[6,16], text:'8½" reference\ncleat bottom + kicker top', pos:[20,8,7], line:[[0,1.55,8.5],[60,1.55,8.5]] }),
   makeAnnotation({ steps:[8], text:'#8 × 2½" screws\n2 high/low per stud', pos:[33,5,17], dots:[[4,1.9,9.5],[4,1.9,11.2],[20,1.9,9.5],[20,1.9,11.2],[36,1.9,9.5],[36,1.9,11.2],[52,1.9,9.5],[52,1.9,11.2]] }),
   makeAnnotation({ steps:[13], text:'19½" spacer joists\nset the bench depth', pos:[30,12,40], line:[[6,1.5,36],[6,21,36]] }),
-  makeAnnotation({ steps:[15], text:'one block per side\neach spans two studs', pos:[30,8,14], dots:[[4.75,1.7,6.75],[19.25,1.7,6.75],[51.25,1.7,6.75],[65.75,1.7,6.75]] }),
-  makeAnnotation({ steps:[16], text:'pocket-screw each tail\ninto its block', pos:[34,17,8], dots:[[4.25,2,6.75],[55.75,2,6.75]] }),
+  makeAnnotation({ steps:[15], text:'tails tuck under the cleat\nits bottom edge = height gauge', pos:[30,8,15], line:[[0,1.6,8.5],[60,1.6,8.5]] }),
+  makeAnnotation({ steps:[16], text:'toe-screws drive UP\ninto the cleat above', pos:[34,17,8], dots:[[4.25,1,7.5],[55.75,1,7.5]] }),
   makeAnnotation({ steps:[17], text:'rail top also 12"\nlevel from cleat', pos:[30,19,17], line:[[0,12,12],[60,12,12]] }),
   makeAnnotation({ steps:[19], text:'wall-end pocket screws\ninto the ledger', pos:[8,5,41], line:[[15,1.5,34.5],[15,5,38]] }),
   makeAnnotation({ steps:[19], text:'front-end pocket screws\ninto the beam', pos:[52,25,41], line:[[44,21,34.5],[44,18,39]] }),
@@ -780,21 +783,21 @@ function card(title, body, note){
   return '<h2>'+title+'</h2>' + (note ? '<p class="note">'+note+'</p>' : '') + '<div class="card">'+body+'</div>';
 }
 
-// ---- pocket-hole map: where all 40 pockets go, drawn to scale ----
+// ---- pocket-hole map: where all 36 pockets go, drawn to scale ----
 function pocketSVG(){
   const S = 12;                 // px per inch
   const BH = 3.5*S;             // board face height (42px)
   const rows = [
     { len:19.5, name:'TOP JOIST — 19½"', qty:'× 6 pieces', ends:'both', face:'all 4 pockets on the SAME wide face', count:'= 24 pockets' },
     { len:10.5, name:'SHELF JOIST — 10½"', qty:'× 3 pieces', ends:'both', face:'on the UNDERSIDE face (screws drive up, invisible)', count:'= 12 pockets' },
-    { len:21,   name:'KICKER — 21"', qty:'× 2 pieces', ends:'left', face:'on the INNER face, WALL end only (tail end)', count:'= 4 pockets' }
+    { len:21,   name:'KICKER — 21"', qty:'× 2 pieces', ends:'none', face:'NO pockets — tails toe-screw up into the cleat at assembly', count:'= 0 pockets' }
   ];
   let s = '<svg width="980" height="'+(rows.length*84+18)+'" viewBox="0 0 980 '+(rows.length*84+18)+'">';
   rows.forEach(function(r, i){
     const y0 = 14 + i*84, W = r.len*S, x0 = 10;
     s += '<rect x="'+x0+'" y="'+y0+'" width="'+W+'" height="'+BH+'" rx="2" fill="'+C.part+'"/>';
     // pocket pairs: centres 1¾" in from the end, 1" and 2½" from the long edges
-    const endsX = r.ends === 'both' ? [x0+1.75*S, x0+W-1.75*S] : [x0+1.75*S];
+    const endsX = r.ends === 'both' ? [x0+1.75*S, x0+W-1.75*S] : (r.ends === 'left' ? [x0+1.75*S] : []);
     endsX.forEach(function(px){
       [1, 2.5].forEach(function(ey){
         s += '<ellipse cx="'+px+'" cy="'+(y0+ey*S)+'" rx="11" ry="5" fill="#1d2125" stroke="'+C.cut+'" stroke-width="1.5"/>';
@@ -804,13 +807,10 @@ function pocketSVG(){
     if (r.ends === 'both'){
       s += '<text x="'+(x0-4)+'" y="'+(y0+BH/2+4)+'" text-anchor="end" font-size="11" fill="'+C.cut+'">&#8592;</text>';
       s += '<text x="'+(x0+W+4)+'" y="'+(y0+BH/2+4)+'" font-size="11" fill="'+C.cut+'">&#8594;</text>';
-    } else {
-      s += '<text x="'+(x0-4)+'" y="'+(y0+BH/2+4)+'" text-anchor="end" font-size="11" fill="'+C.cut+'">&#8592; wall</text>';
-      s += '<text x="'+(x0+W+4)+'" y="'+(y0+BH/2+4)+'" font-size="11" fill="'+C.muted+'">leg end — no pockets</text>';
     }
     // labels at right
     s += '<text x="380" y="'+(y0+12)+'" font-size="13" font-weight="700" fill="'+C.light+'">'+r.name+' <tspan fill="'+C.muted+'" font-weight="400">'+r.qty+'</tspan> <tspan fill="'+C.cut+'" font-weight="700">'+r.count+'</tspan></text>';
-    s += '<text x="380" y="'+(y0+30)+'" font-size="12" fill="'+C.muted+'">2 pockets per marked end — '+r.face+'</text>';
+    s += '<text x="380" y="'+(y0+30)+'" font-size="12" fill="'+C.muted+'">'+(r.ends==='none' ? r.face : '2 pockets per marked end — '+r.face)+'</text>';
     s += '<text x="380" y="'+(y0+46)+'" font-size="12" fill="'+C.muted+'">centres ~1¾&quot; from the end; 1&quot; and 2½&quot; in from the long edges</text>';
   });
   return s + '</svg>';
@@ -825,7 +825,7 @@ const studDefs = [
   ['Stud 6', [[60,'SHELF RAIL — half 2 of 2','60"'],[19.5,'Top joist','19½"']]],
   ['Stud 7', [[34.5,'LEG','34½"',C.dark],[34.5,'LEG','34½"',C.dark],[10.5,'Shelf joist','10½"'],[10.5,'Shelf joist','10½"']]],
   ['Stud 8', [[34.5,'LEG','34½"',C.dark],[34.5,'LEG','34½"',C.dark],[10.5,'Shelf joist','10½"']]],
-  ['Stud 9', [[21,'KICKER','21"'],[21,'KICKER','21"'],[16,'Wall block','16"'],[16,'Wall block','16"'],[8.5,'Post','~8½" fit']]],
+  ['Stud 9', [[21,'KICKER','21"'],[21,'KICKER','21"'],[8.5,'Post','~8½" fit']]],
   ['Stud 10', null]
 ];
 
@@ -834,7 +834,7 @@ function renderCuts(){
   html += '<div class="rules"><b>Read me before the first cut.</b> Red marks are the saw kerf — the ⅛&quot; the blade eats — drawn to true scale and already budgeted in every diagram. '
     + 'Work left to right on each stud: cut the big piece first, and the offcut automatically becomes the next part. '
     + 'Mark with a V, cut on the waste side of the line, and measure each offcut before cutting from it. '
-    + 'After cutting, drill the pocket holes while every piece is loose: 2 per end of each top joist and shelf joist, 2 at each kicker tail — 40 pockets total, jig set to 1½&quot; material. '
+    + 'After cutting, drill the pocket holes while every piece is loose: 2 per end of each top joist and shelf joist — 36 pockets total, jig set to 1½&quot; material. '
     + 'The dashed grey line shows where a short 92⅝&quot; &quot;8-ft&quot; stud would end — every layout still fits.</div>';
 
   let studHtml = '';
@@ -845,9 +845,9 @@ function renderCuts(){
     studHtml,
     'Order: studs 1–6 each give one 60&quot; piece, then a 19½&quot; joist from the offcut. Studs 7–8 give the legs, then the shelf joists from their offcuts. Stud 9 carries the small parts — cut the post last, to the gap you measure in place (Step 18 of the build). Stud 10 stays whole.');
 
-  html += card('The pocket-hole map — drill all 40 before assembly',
+  html += card('The pocket-hole map — drill all 36 before assembly',
     pocketSVG(),
-    'Jig set to <b>1½&quot; material</b>, collar on the stepped bit to match, jig flush with the board end so the screw exits the end grain. Each pair sits <b>1&quot; and 2½&quot; in from the board&#39;s long edges</b> — the Kreg 320&#39;s two guides land there automatically when the jig is centred on the 3½&quot; face. Keep every pair on the SAME face per piece so all driving happens from one side. Tally: 6 top joists × 4 + 3 shelf joists × 4 + 2 kickers × 2 = <b>40 pockets</b>.');
+    'Jig set to <b>1½&quot; material</b>, collar on the stepped bit to match, jig flush with the board end so the screw exits the end grain. Each pair sits <b>1&quot; and 2½&quot; in from the board&#39;s long edges</b> — the Kreg 320&#39;s two guides land there automatically when the jig is centred on the 3½&quot; face. Keep every pair on the SAME face per piece so all driving happens from one side. Tally: 6 top joists × 4 + 3 shelf joists × 4 = <b>36 pockets</b>. The kickers need none — their tails toe-screw up into the cleat.');
 
   html += card('The plywood sheet — ¾&quot; × 48&quot; × 96&quot;, cuts numbered in order',
     sheetSVG(96, 48, [
