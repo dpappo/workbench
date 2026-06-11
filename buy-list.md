@@ -35,14 +35,14 @@ Shopping list for the stud-anchored workbench. ~~Struck-through~~ items are alre
 | ~~½" socket + ratchet wrench~~ | — | **Have** — hand-driving the 12 lags with the ratchet (no drill adapter needed); slower but better feel for "washer seated, stop" |
 | ~~7/32" twist bit~~ | — | **Have** |
 | ~~⅛" twist bit~~ | — | **Have** |
-| Countersink bit | ~$8 | Seats screw heads flush in the plywood and hardboard |
+| [RYOBI SpeedLoad+ countersink set, 5-pc](https://homedepot.ca/en/home/p.power-groove-countersink-set-5-piece.1000546924.html) | $29.98 | Use the **#8** — matches the screws. Pilot + countersink in one plunge; seats heads flush in ply and hardboard. (Budget alternative: skip it — pre-drill the hardboard with the ⅛" bit and drive heads flush carefully) |
 | ~~Tape measure~~ | — | **Have** |
 | Pencil | ~$1 | |
 | ~~Safety glasses~~ | — | **Have** |
 | ~~Hearing protection~~ | — | **Have** |
-| 120-grit sandpaper | ~$5 | Easing edges in the final step |
+| ~~120-grit sandpaper~~ | — | **Have** |
 
-**Left to buy:** ~$216 in materials (or ~$172 without pegboard) + $48.97 jig + roughly $14 of countersink, pencil, and sandpaper.
+**Left to buy:** ~$216 in materials (or ~$172 without pegboard) + $48.97 jig + $29.98 countersink set (optional — see its row) + a pencil.
 
 **Driving with a drill instead of an impact driver:** completely fine for this build. Use the low-speed/high-torque gear (1) for the long screws, keep the clutch engaged so you don't over-drive, and lean in — the drill won't hammer like an impact does, so it relies on your arm for the last quarter-turn.
 
