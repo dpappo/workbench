@@ -142,10 +142,11 @@ const PARTS = [
   // spacer joists (ghost) during positioning + squaring
   { b:[6,1.5,31, 1.5,19.5,3.5],    c:COL.framing, appear:13, only:[13,14], ghost:true },
   { b:[52.5,1.5,31, 1.5,19.5,3.5], c:COL.framing, appear:13, only:[13,14], ghost:true },
-  // wall block, then kickers
+  // wall blocks (one per side, each spanning two studs), then kickers butting the blocks
+  { b:[4,0,5, 16,1.5,3.5],    c:COL.framing, appear:15 },
   { b:[50.5,0,5, 16,1.5,3.5], c:COL.framing, appear:15 },
-  { b:[3.5,0,5, 1.5,21,3.5],  c:COL.framing, appear:16 },
-  { b:[55,1.5,5, 1.5,21,3.5], c:COL.framing, appear:16 },
+  { b:[3.5,1.5,5, 1.5,21,3.5], c:COL.framing, appear:16 },
+  { b:[55,1.5,5, 1.5,21,3.5],  c:COL.framing, appear:16 },
   // rail, post
   { b:[0,12,8.5, 60,3,3.5],       c:COL.framingDark, appear:17 },
   { b:[28.5,11.75,0, 1.5,3.5,8.5], c:COL.framing, appear:18 },
@@ -227,7 +228,7 @@ const STEPS = [
 <li>1 × Fibrex 4×8 white pegboard ($43.98, optional)</li>
 </ul>
 <p><b>Why three screw types?</b> The 2½" screws join 1½"-thick wood face-to-face. The 1¼" screws attach sheets. The pocket screws make the angled joints (next paragraph). The rule behind every fastener choice: <b>a screw must pass completely through the first piece and bite ~1" into the second.</b></p>
-<p><b>The angled joints.</b> Wherever a board's END meets another board's face — joist into ledger, kicker tail into stud — a straight screw has nothing to grab. This build uses <b>pocket holes</b>: the Kreg jig drills a guided, angled channel into the board's side, and a pocket screw drives through it into the wood behind. Foolproof angle, no splitting, drilled comfortably at the bench before assembly. Two joints (the rail ends and the optional post) instead use <b>toe-screws</b> — the freehand version of the same idea, taught in Step 17. And where the first piece is a doubled (3") member, the joint gets a 4" <b>lag bolt</b> (thick hex-head screw driven with a socket, washer under the head).</p>
+<p><b>The angled joints.</b> Wherever a board's END meets another board's face — joist into ledger, kicker tail into its wall block — a straight screw has nothing to grab. This build uses <b>pocket holes</b>: the Kreg jig drills a guided, angled channel into the board's side, and a pocket screw drives through it into the wood behind. Foolproof angle, no splitting, drilled comfortably at the bench before assembly. Two joints (the rail ends and the optional post) instead use <b>toe-screws</b> — the freehand version of the same idea, taught in Step 17. And where the first piece is a doubled (3") member, the joint gets a 4" <b>lag bolt</b> (thick hex-head screw driven with a socket, washer under the head).</p>
 <p><b>Pilot holes, the one rule:</b> lags always get a 7/32" pilot. Regular construction screws are self-drilling in softwood and need none — <i>except</i> within ~1½" of a board's end, where a ⅛" pilot prevents splitting. The steps call out every pilot moment; there are only four in the whole build (two lag steps, the rail toe-screws, the post).</p>
 <p><b>Tools:</b> drill (smooth — for holes) + impact driver (hammers as it spins — for screws and lags) with a ½" socket on a ¼"-hex adapter; <b>Kreg 320 pocket-hole jig ($48.97)</b> — set to 1½" material, with its stepped bit in the drill; a circular saw (5½" or 7¼" — both handle every cut); 7" rafter square (90° lines + saw guide); a 24"+ level; 7/32" twist bit (lag pilots), ⅛" twist bit (near-end pilots), and a 3/8" twist bit — spun <b>in reverse</b> it chamfers a clean screw-head recess, replacing a countersink bit; tape, pencil, safety glasses, hearing protection.</p>`],
 
@@ -301,17 +302,15 @@ const STEPS = [
 <p><b>Square:</b> measure diagonally from each end of the ledger to the opposite end of the beam (the red dashed lines). <b>Equal numbers = square.</b> If not, slide the beam sideways until they match.</p>
 <p><b>Do this NOW</b> — when the joists go in (Step 19) they'll lock the frame with twelve screws, and after that, nothing nudges.</p>`],
 
-['Check the kicker tails — install the wall block',
-`<p>The two kickers will run from the wall to each leg, low down. <b>Before fastening anything</b>, hold each kicker in place (on edge, against the leg's inner face, running back to the wall) and look at what its tail lands on.</p>
-<p><b>A stud directly behind the tail?</b> That kicker can pocket-screw straight into the stud, so it needs no block. <b>Tail lands in open air between studs?</b> Add a block there first: a 16" 2×4 flat against the wall at kicker height, spanning the two nearest studs, two 2½" screws into each stud.</p>
-<p>That is why the block may appear on only one side. It is not a matched pair; it is a landing pad added only where the wall has no stud behind the kicker tail.</p>
-<p class="why">In this model the left kicker lands on the left stud; the right kicker lands in a bay, so only the right side gets the highlighted block. Your wall may differ — check both sides and add blocks only where needed.</p>`],
+['Install the two wall blocks',
+`<p>The two kickers will run from the wall to each leg, low down — and each one needs solid wood to fasten its tail into. Your wall can't promise that: studs repeat every 16", but the kicker tails sit ~53" apart (where the <i>bench</i> needs them), and 53 isn't a multiple of 16 — so the tails land wherever they land, usually in an empty bay.</p>
+<p>Rather than gambling on stud positions, <b>give every tail its own landing pad</b>: one 16" 2×4 per side, laid flat against the wall at kicker height (top edge level with the cleat's bottom — the 8½" reference), each spanning the two studs nearest that kicker's tail. Two 2½" screws into each stud, four per block.</p>
+<p class="why">Why a block beats even a lucky stud: the tail's load spreads across TWO studs instead of one, both sides are built identically (no judgment calls, no asymmetry), and the kickers in the next step become interchangeable twins. If a stud happens to sit right behind a tail, the block simply laps over it — nothing changes.</p>`],
 
 ['Fit the kickers',
-`<p>One 21" kicker per side, on edge, pressed against the leg's inner face.</p>
-<p><b>Set the height with the level, not the floor:</b> hold the level across from the <b>cleat's bottom edge</b> (that's the 8½" reference, already dead level from Step 6) and mark the leg — the kicker's top edge goes on that mark.</p>
-<p>Screw each kicker to its leg with <b>three 2½" screws</b> through the kicker's face into the leg. Then fasten the wall tail through the <b>two pocket holes you drilled at cutting time</b>: a 2½" Kreg pocket screw in each, driven into the stud on a stud side, into the block on a blocked side. The jig already set the perfect angle — just seat the long square driver bit in the pocket and drive until snug.</p>
-<p>The blocked-side kicker butts the block rather than the wall, so its tail sits 1½" farther forward than the stud-side tail. That asymmetry is expected; both kickers still brace the legs because each tail is screwed into solid wood.</p>
+`<p>One 21" kicker per side, on edge, pressed against the leg's inner face, tail butted against its wall block. Both sides are identical — that's the point of the blocks.</p>
+<p><b>Set the height with the level, not the floor:</b> hold the level across from the <b>cleat's bottom edge</b> (that's the 8½" reference, already dead level from Step 6) and mark the leg — the kicker's top edge goes on that mark, flush with the block's top.</p>
+<p>Screw each kicker to its leg with <b>three 2½" screws</b> through the kicker's face into the leg. Then fasten the tail through the <b>two pocket holes you drilled at cutting time</b>: a 2½" Kreg pocket screw in each, driven into the block. The jig already set the perfect angle — just seat the long square driver bit in the pocket and drive until snug.</p>
 <svg class="mini" width="360" height="118" viewBox="0 0 360 118">
 <rect x="252" y="10" width="64" height="98" fill="#5c666e"/>
 <rect x="12" y="64" width="240" height="38" fill="#c9a36b"/>
@@ -610,9 +609,8 @@ const ANNOTATIONS = [
   makeAnnotation({ steps:[6,16], text:'8½" reference\ncleat bottom + kicker top', pos:[20,8,7], line:[[0,1.55,8.5],[60,1.55,8.5]] }),
   makeAnnotation({ steps:[8], text:'#8 × 2½" screws\n2 high/low per stud', pos:[33,5,17], dots:[[4,1.9,9.5],[4,1.9,11.2],[20,1.9,9.5],[20,1.9,11.2],[36,1.9,9.5],[36,1.9,11.2],[52,1.9,9.5],[52,1.9,11.2]] }),
   makeAnnotation({ steps:[13], text:'19½" spacer joists\nset the bench depth', pos:[30,12,40], line:[[6,1.5,36],[6,21,36]] }),
-  makeAnnotation({ steps:[15], text:'left tail lands on stud\nno block needed here', pos:[14,7,14], line:[[4.25,0.3,8.5],[4.25,17,8.5]] }),
-  makeAnnotation({ steps:[15,16], text:'right tail lands in a bay\nblock creates solid wood', pos:[44,8,15], line:[[55.75,1.7,8.5],[55.75,17,8.5]] }),
-  makeAnnotation({ steps:[16], text:'pocket-screw tail\ninto stud or block', pos:[34,17,8], dots:[[4.25,1.5,6.75],[55.75,2,6.75]] }),
+  makeAnnotation({ steps:[15], text:'one block per side\neach spans two studs', pos:[30,8,14], dots:[[4.75,1.7,6.75],[19.25,1.7,6.75],[51.25,1.7,6.75],[65.75,1.7,6.75]] }),
+  makeAnnotation({ steps:[16], text:'pocket-screw each tail\ninto its block', pos:[34,17,8], dots:[[4.25,2,6.75],[55.75,2,6.75]] }),
   makeAnnotation({ steps:[17], text:'rail top also 12"\nlevel from cleat', pos:[30,19,17], line:[[0,12,12],[60,12,12]] }),
   makeAnnotation({ steps:[19], text:'wall-end pocket screws\ninto the ledger', pos:[8,5,41], line:[[15,1.5,34.5],[15,5,38]] }),
   makeAnnotation({ steps:[19], text:'front-end pocket screws\ninto the beam', pos:[52,25,41], line:[[44,21,34.5],[44,18,39]] }),
