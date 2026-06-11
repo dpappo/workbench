@@ -39,6 +39,8 @@ Most workbenches are freestanding tables: four legs, with all the stability comi
 
 The 2½" screws join 1½"-thick wood face-to-face: through one board, an inch of bite into the next. The 1¼" screws attach sheets (ply-to-ply, hardboard, pegboard). The Kreg pocket screws make the angled end-to-face joints. The rule that explains all the fastener choices below: **a screw must pass completely through the first piece and bite at least ~1" into the second.**
 
+**Pilot holes, the one rule:** lag bolts always get a 7/32" pilot. Regular construction screws are self-drilling in softwood and need none — *except* within ~1½" of a board's end, where a ⅛" pilot prevents splitting. The steps call out every pilot moment; there are only four in the whole build (the two lag steps, the rail toe-screws, and the optional post).
+
 **The angled joints.** Wherever a board's end meets another board's face — joist into ledger, kicker tail into stud — a straight screw has nothing to grab. This build uses **pocket holes**: the Kreg jig drills a guided, angled channel into the board's side, and a 2½" pocket screw drives through it into the wood behind. Foolproof angle, no splitting, and you drill every pocket comfortably at the bench before assembly. Two joints (the rail ends and the optional post) instead use **toe-screws** — the freehand version of the same idea, taught in Step 8. And wherever the first piece is a doubled (3") member, the joint gets a 4" lag bolt (thick hex-headed screw driven with a socket, washer under the head to spread the clamping force).
 
 **At the lumber rack:** sight down each stud's long edge like a rifle barrel; reject any that curve ("bow") or corkscrew ("twist"). Ten minutes of picking saves the whole day.
@@ -52,7 +54,7 @@ The 2½" screws join 1½"-thick wood face-to-face: through one board, an inch of
 - **Empire 7" rafter square** — $11.98: draws perfect 90° lines and guides the saw.
 - **Empire 48" level** — $59.98 (any 24"+ level works). "Level" = truly horizontal — which beats "same height off the floor," because garage floors slope.
 - **Kreg 320 pocket-hole jig** — $48.97: drills the guided angled holes for all joist and kicker joints. Set it to 1½" material, and set the collar on its stepped bit to match.
-- 7/32" twist bit (lag pilot holes), countersink bit (cones the surface so screw heads sit flush or below), tape, pencil, safety glasses, hearing protection.
+- 7/32" twist bit (lag pilot holes), ⅛" twist bit (near-end pilots), countersink bit (cones the surface so screw heads sit flush or below), tape, pencil, safety glasses, hearing protection.
 
 ---
 
@@ -133,7 +135,7 @@ Hold a 60" 2×4 with its top on the 34½" line (a helper, or two temporary screw
 
 ### Step 3 — Screw the shelf cleat to the studs
 
-A 60" 2×4 flat against the wall on the 12" line, two 2½" screws per stud. It projects 1½" — that little edge carries the back of the shelf. No lags needed; the shelf holds bins, not bench loads.
+A 60" 2×4 flat against the wall on the 12" line, two 2½" screws per stud. **No pilot holes needed** — construction screws self-drill in softwood; pilots are only for lags and for screws within ~1½" of a board's end. It projects 1½" — that little edge carries the back of the shelf. No lags needed; the shelf holds bins, not bench loads.
 
 ### Step 4 — Make the doubled parts
 
@@ -165,11 +167,11 @@ Now set each kicker for real. Height comes from the level, not the floor: hold t
 
 ### Step 8 — Set the shelf rail
 
-Rest the doubled rail across the two kickers (its ends sit on them; top of rail lands at 12", matching the cleat line — check with the level). Flush its ends with the frame's outside edges, then toe-screw down into each kicker, two 2½" screws per end. The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out: this is your one freehand angled joint of the build.
+Rest the doubled rail across the two kickers (its ends sit on them; top of rail lands at 12", matching the cleat line — check with the level). Flush its ends with the frame's outside edges, then toe-screw down into each kicker, two 2½" screws per end. **Pilot alert:** these screws start close to the rail's ends, where wood splits easily — drill a ⅛" pilot at your chosen angle before driving each. The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out: this is your one freehand angled joint of the build.
 
 **Toe-screwing, the manual version of a pocket screw:** start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the rail's side down into the kicker. It feels wrong the first time and works every time — and after forty guided pocket screws, your hands will already know the angle.
 
-If you want the optional centre post, measure the actual gap from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope — cut the post to that length, stand it, and toe-screw it top and bottom. Cheap insurance against sag when the shelf is loaded.
+If you want the optional centre post, measure the actual gap from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope — cut the post to that length, stand it, and toe-screw it top and bottom (⅛" pilots here too — the screws sit near the post's ends). Cheap insurance against sag when the shelf is loaded.
 
 Note the rail floats 9" back from the bench front — that's your knee room, by design.
 
