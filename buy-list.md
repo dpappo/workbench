@@ -32,9 +32,9 @@ Shopping list for the stud-anchored workbench. ~~Struck-through~~ items are alre
 | ~~Empire 7" rafter square~~ | — | **Have** |
 | ~~48" level~~ | — | **Have** |
 | [Kreg 320 pocket-hole jig](https://www.homedepot.ca/product/kreg-tool-company-pocket-hole-jig-320/1001491607) | $48.97 | Drills the 40 guided angled joints; includes its stepped bit and driver bit |
-| ½" socket + ¼"-hex socket adapter | ~$8 | Lets the drill drive the 12 lag bolts |
-| 7/32" twist bit | ~$4 | Lag pilot holes (Steps 7 & 12) |
-| ⅛" twist bit | ~$3 | Near-end pilots for the rail/post toe-screws |
+| ~~½" socket + ratchet wrench~~ | — | **Have** — hand-driving the 12 lags with the ratchet (no drill adapter needed); slower but better feel for "washer seated, stop" |
+| ~~7/32" twist bit~~ | — | **Have** |
+| ~~⅛" twist bit~~ | — | **Have** |
 | Countersink bit | ~$8 | Seats screw heads flush in the plywood and hardboard |
 | ~~Tape measure~~ | — | **Have** |
 | Pencil | ~$1 | |
@@ -42,6 +42,8 @@ Shopping list for the stud-anchored workbench. ~~Struck-through~~ items are alre
 | ~~Hearing protection~~ | — | **Have** |
 | 120-grit sandpaper | ~$5 | Easing edges in the final step |
 
-**Left to buy:** ~$216 in materials (or ~$172 without pegboard) + $48.97 jig + roughly $29 of bits, socket adapter, pencil, and sandpaper.
+**Left to buy:** ~$216 in materials (or ~$172 without pegboard) + $48.97 jig + roughly $14 of countersink, pencil, and sandpaper.
 
-**Driving with a drill instead of an impact driver:** completely fine for this build. Use the low-speed/high-torque gear (1) for the lags and the long screws, keep the clutch engaged so you don't over-drive, and lean in — the drill won't hammer like an impact does, so it relies on your arm for the last quarter-turn. The 12 lags are the only spot you'll notice the difference; pilot holes make them manageable.
+**Driving with a drill instead of an impact driver:** completely fine for this build. Use the low-speed/high-torque gear (1) for the long screws, keep the clutch engaged so you don't over-drive, and lean in — the drill won't hammer like an impact does, so it relies on your arm for the last quarter-turn.
+
+**Lags by hand ratchet:** also completely fine — arguably better, since you'll feel the washer seat through the handle and stop before crushing fibres. Each lag is ~2½" of threaded travel × 12 bolts, so it's a few honest minutes of ratcheting per bolt. Don't skip the 7/32" pilots — they're what makes hand-driving reasonable. If one binds mid-drive, back it out and deepen the pilot rather than muscling it.
