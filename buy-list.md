@@ -1,12 +1,10 @@
 # Buy List
 
-Shopping list for the stud-anchored workbench. Outstanding items are listed first; ~~struck-through~~ lines are owned, skipped, or on order. All links go to homedepot.ca product pages (Ontario pricing, June 2026).
+Shopping list for the stud-anchored workbench. Outstanding items are listed first; ~~struck-through~~ lines are already owned or bought. All links go to homedepot.ca product pages (Ontario pricing, June 2026).
 
 ---
 
 ## Materials
-
-### Still to buy
 
 | Item | Qty | Unit | Total | Have it? |
 |------|-----|------|-------|----------|
@@ -16,34 +14,21 @@ Shopping list for the stud-anchored workbench. Outstanding items are listed firs
 | [Paulin 5/16" × 4" hex lag bolts, zinc](https://www.homedepot.ca/product/paulin-5-16-x-4-inch-hex-head-lag-bolt-zinc-plated/1000136736) | 12 | $1.18 | $14.16 | |
 | [Paulin 5/16" plain steel washers, zinc](https://www.homedepot.ca/product/paulin-5-16-inch-plain-steel-washers-zinc-plated-1pc/1000131518) — one per lag; in-store bin item | 12 | $0.19 | $2.28 | |
 | [Fibrex 4×8 white pegboard](https://www.homedepot.ca/product/fibrex-5-5mm-48-inch-x96-inch-white-hdf-hardboard-pegboard/1000428749) (optional) | 1 | $43.98 | $43.98 | |
-| **Bench materials subtotal** | | | **$125.11** | |
-| **Total with pegboard** | | | **~$169** | |
-
-### On order / done
-
-| Item | Qty | Unit | Total | Have it? |
-|------|-----|------|-------|----------|
-| ~~[PaulinPRO #8 × 2½" screws, 150 pc](https://www.homedepot.ca/product/profast-8-x-2-1-2-inch-pro-deck-screws-in-brown-150-piece-/1001109918) — **T20 star drive, bit in box**~~ | 1 | $25.88 | $25.88 | **Ordered** — Jun 13 |
-| ~~[Paulin #8 × 1¼" construction screws, 100 pc](https://www.homedepot.ca/product/paulin--8-x-1-1-4-inch-flat-head-square-drive-construction-screws-in-yellow-zinc-100pcs/1000684323) — **#2 Robertson square drive**~~ | 1 | $9.48 | $9.48 | **Ordered** — Jun 13 |
-| ~~[Kreg 2½" coarse Blue-Kote pocket screws, 50 ct](https://www.homedepot.ca/product/kreg-tool-company-2-1-2-inch-64-mm-coarse-thread-blue-kote-pocket-hole-screws-50-ct-/1001490327) — **#2 square; use the long Kreg driver from the jig**~~ | 1 | $11.99 | $11.99 | **Ordered** — Jun 13 |
-| **Ordered Jun 13 subtotal** | | | **$47.35** | |
+| Pencil | 1 | ~$1 | ~$1 | |
+| **Bench materials subtotal** | | | **$126.11** | |
+| **Total with pegboard** | | | **~$170** | |
+| ~~[PaulinPRO #8 × 2½" screws, 150 pc](https://www.homedepot.ca/product/profast-8-x-2-1-2-inch-pro-deck-screws-in-brown-150-piece-/1001109918) — **T20 star drive, bit in box**~~ | 1 | $25.88 | $25.88 | **Have** |
+| ~~[Paulin #8 × 1¼" construction screws, 100 pc](https://www.homedepot.ca/product/paulin--8-x-1-1-4-inch-flat-head-square-drive-construction-screws-in-yellow-zinc-100pcs/1000684323) — **#2 Robertson square drive**~~ | 1 | $9.48 | $9.48 | **Have** |
+| ~~[Kreg 2½" coarse Blue-Kote pocket screws, 50 ct](https://www.homedepot.ca/product/kreg-tool-company-2-1-2-inch-64-mm-coarse-thread-blue-kote-pocket-hole-screws-50-ct-/1001490327) — **#2 square; use the long Kreg driver from the jig**~~ | 1 | $11.99 | $11.99 | **Have** |
 
 ---
 
 ## Tools
 
-### Still to buy
-
 | Tool | Price | Status / notes |
 |------|-------|----------------|
 | 3/8" twist bit | — | Check your bit set — most include one. Spun **in reverse** at the mouth of a pilot hole, it chamfers a clean screw-head recess (the no-countersink trick used in Steps 22–24) |
-| Pencil | ~$1 | |
-
-### On order / done
-
-| Tool | Price | Status / notes |
-|------|-------|----------------|
-| ~~[Kreg 320 pocket-hole jig](https://www.homedepot.ca/product/kreg-tool-company-pocket-hole-jig-320/1001491607)~~ | — | **Ordered** — arrives Jun 13; drills the 40 guided angled joints; includes stepped bit and driver bit |
+| ~~[Kreg 320 pocket-hole jig](https://www.homedepot.ca/product/kreg-tool-company-pocket-hole-jig-320/1001491607)~~ | — | **Have** — drills the 40 guided angled joints; includes stepped bit and driver bit |
 | ~~Drill~~ | — | **Have.** Will also drive the screws (see note below) |
 | ~~Impact driver~~ | — | **Skipping** — driving screws and lags with the drill instead |
 | ~~Circular saw~~ | — | **Have** |
@@ -58,7 +43,7 @@ Shopping list for the stud-anchored workbench. Outstanding items are listed firs
 | ~~Hearing protection~~ | — | **Have** |
 | ~~120-grit sandpaper~~ | — | **Have** |
 
-**Left to buy:** ~$125 in lumber and hardware (studs, plywood, hardboard, lags, washers) — or ~$169 with optional pegboard — plus a pencil. **On order (Jun 13):** Kreg 320 jig, pocket screws, PRO deck screws, construction screws ($96.32).
+**Left to buy:** ~$126 in lumber and hardware (studs, plywood, hardboard, lags, washers, pencil) — or ~$170 with optional pegboard — plus confirm you have a 3/8" twist bit in your set.
 
 **Driving with a drill instead of an impact driver:** completely fine for this build. Use the low-speed/high-torque gear (1) for the long screws, keep the clutch engaged so you don't over-drive, and lean in — the drill won't hammer like an impact does, so it relies on your arm for the last quarter-turn.
 
