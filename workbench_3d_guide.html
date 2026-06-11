@@ -229,7 +229,7 @@ const STEPS = [
 <p><b>Why three screw types?</b> The 2½" screws join 1½"-thick wood face-to-face. The 1¼" screws attach sheets. The pocket screws make the angled joints (next paragraph). The rule behind every fastener choice: <b>a screw must pass completely through the first piece and bite ~1" into the second.</b></p>
 <p><b>The angled joints.</b> Wherever a board's END meets another board's face — joist into ledger, kicker tail into stud — a straight screw has nothing to grab. This build uses <b>pocket holes</b>: the Kreg jig drills a guided, angled channel into the board's side, and a pocket screw drives through it into the wood behind. Foolproof angle, no splitting, drilled comfortably at the bench before assembly. Two joints (the rail ends and the optional post) instead use <b>toe-screws</b> — the freehand version of the same idea, taught in Step 17. And where the first piece is a doubled (3") member, the joint gets a 4" <b>lag bolt</b> (thick hex-head screw driven with a socket, washer under the head).</p>
 <p><b>Pilot holes, the one rule:</b> lags always get a 7/32" pilot. Regular construction screws are self-drilling in softwood and need none — <i>except</i> within ~1½" of a board's end, where a ⅛" pilot prevents splitting. The steps call out every pilot moment; there are only four in the whole build (two lag steps, the rail toe-screws, the post).</p>
-<p><b>Tools:</b> drill (smooth — for holes) + impact driver (hammers as it spins — for screws and lags) with a ½" socket on a ¼"-hex adapter; <b>Kreg 320 pocket-hole jig ($48.97)</b> — set to 1½" material, with its stepped bit in the drill; a circular saw (5½" or 7¼" — both handle every cut); 7" rafter square (90° lines + saw guide); a 24"+ level; 7/32" twist bit (lag pilots) and ⅛" twist bit (near-end pilots); countersink bit; tape, pencil, safety glasses, hearing protection.</p>`],
+<p><b>Tools:</b> drill (smooth — for holes) + impact driver (hammers as it spins — for screws and lags) with a ½" socket on a ¼"-hex adapter; <b>Kreg 320 pocket-hole jig ($48.97)</b> — set to 1½" material, with its stepped bit in the drill; a circular saw (5½" or 7¼" — both handle every cut); 7" rafter square (90° lines + saw guide); a 24"+ level; 7/32" twist bit (lag pilots), ⅛" twist bit (near-end pilots), and a 3/8" twist bit — spun <b>in reverse</b> it chamfers a clean screw-head recess, replacing a countersink bit; tape, pencil, safety glasses, hearing protection.</p>`],
 
 ['PREP · The seating check',
 `<p>Before you cut anything, confirm the sitting ergonomics. The bench surface lands at <b>36⅛"</b> — kitchen-counter height — and the lower shelf's front edge sits <b>9" back</b> from the bench front at shin height (shelf surface 12¾").</p>
@@ -369,7 +369,7 @@ const STEPS = [
 
 ['Top — bottom layer',
 `<p>The <b>23⅞" × 60"</b> ply goes down first, pushed <b>flush to the wall</b>. Its front edge sits ⅛" shy of the beam's face — that's correct (the rip kerf made this strip the narrow one), and it's about to be hidden.</p>
-<p>Screw with 2½" screws, <b>countersunk</b>: two into every joist, plus one every ~12" along the ledger and beam edges. To countersink, drill the cone first with the countersink bit or just drive the head slightly below the surface — these construction screws mostly self-seat.</p>
+<p>Screw with 2½" screws, <b>countersunk</b> (head slightly below the surface): two into every joist, plus one every ~12" along the ledger and beam edges. These construction screws mostly self-seat in spruce ply — drive firmly and check each head with a fingertip. Any head sitting proud: kiss the hole with the <b>3/8" twist bit spun in reverse</b> (light pressure — reverse scrapes a clean cone without grabbing) and re-drive.</p>
 <p class="why">Why heads must sit below flush: the next layer has to lie dead flat on this one — one proud screw head and the whole top rocks on it.</p>`],
 
 ['Top — top layer',
@@ -379,7 +379,7 @@ const STEPS = [
 
 ['The wear surface',
 `<p>Hardboard, <b>smooth side up</b>: the 24" × 48" piece plus the 23⅞" × 12" piece. Put the narrower piece's ⅛" shortfall <b>against the wall</b>, where it vanishes. The seam between pieces can go wherever you like — the ply below is continuous, so it's purely cosmetic.</p>
-<p>About 4 screws per piece at corners/edges, 1¼", countersunk <b>dead flush</b> — a hair-proud head will scratch every project that slides over it. <b>No glue.</b></p>
+<p>About 4 screws per piece at corners/edges, 1¼", <b>dead flush</b> — a hair-proud head will scratch every project that slides over it. The hardboard routine: pilot with the ⅛" bit, then chamfer the hole's mouth with the <b>3/8" twist bit spun in reverse</b> — essential in thin hardboard, where a forward-spinning big bit grabs and tears. Stop the moment a faint ring forms, then drive flush. <b>No glue.</b></p>
 <p class="why">Why this layer exists: it's the designated victim. Cuts, paint, solder burns all land here. In a few years, back out the screws and drop in your 23⅞" × 35⅞" leftover blank — or a fresh $11 panel — and the bench looks new.</p>`],
 
 ['Pegboard',
@@ -414,9 +414,9 @@ const STEP_TOOLS = {
   19: [['joist','Six 19½" joists'], ['jig','Pocket screws ×4 each'], ['driver','Impact driver'], ['lag','Clear lag heads']],
   20: [['joist','Three 10½" shelf joists'], ['jig','Pocket screws ×4 each'], ['tape','35⅞" seam support']],
   21: [['ply','15" shelf plywood'], ['shortScrew','1¼" screws'], ['driver','Impact driver']],
-  22: [['ply','23⅞" × 60" ply'], ['screw','2½" screws'], ['countersink','Countersink bit']],
-  23: [['ply','24" × 60" ply'], ['shortScrew','1¼" screws'], ['countersink','Countersink bit']],
-  24: [['top','Hardboard'], ['shortScrew','1¼" screws'], ['countersink','Flush heads']],
+  22: [['ply','23⅞" × 60" ply'], ['screw','2½" screws'], ['drill','3/8" bit — reverse chamfer']],
+  23: [['ply','24" × 60" ply'], ['shortScrew','1¼" screws'], ['drill','3/8" bit — reverse chamfer']],
+  24: [['top','Hardboard'], ['shortScrew','1¼" screws'], ['drill','3/8" reverse chamfer — flush heads']],
   25: [['top','Pegboard'], ['shortScrew','1¼" screws'], ['driver','Impact driver']],
   26: [['sand','120-grit sandpaper'], ['tape','Final dimensions'], ['printer','Load placement']]
 };

@@ -55,7 +55,7 @@ The 2½" screws join 1½"-thick wood face-to-face: through one board, an inch of
 - **[Empire 7" rafter square](https://www.homedepot.ca/product/empire-7-inch-laser-etched-aluminum-rafter-square/1000847630)** — $11.98: draws perfect 90° lines and guides the saw.
 - **[Empire 48" level](https://www.homedepot.ca/product/empire-48-inch-box-level/1000836114)** — $59.98 (any 24"+ level works). "Level" = truly horizontal — which beats "same height off the floor," because garage floors slope.
 - **[Kreg 320 pocket-hole jig](https://www.homedepot.ca/product/kreg-tool-company-pocket-hole-jig-320/1001491607)** — $48.97: drills the guided angled holes for all joist and kicker joints. Set it to 1½" material, and set the collar on its stepped bit to match.
-- 7/32" twist bit (lag pilot holes), ⅛" twist bit (near-end pilots), countersink bit (cones the surface so screw heads sit flush or below), tape, pencil, safety glasses, hearing protection.
+- 7/32" twist bit (lag pilot holes), ⅛" twist bit (near-end pilots), 3/8" twist bit — spun **in reverse** at a pilot hole's mouth it chamfers a clean screw-head recess, replacing a countersink bit — tape, pencil, safety glasses, hearing protection.
 
 ---
 
@@ -204,7 +204,7 @@ The 24" × 60" sheet, front edge flush with the beam face. Screw to the layer be
 
 ### Step 13 — The wear surface
 
-Hardboard pieces (24 × 48 and 23⅞ × 12) smooth side up. Put the narrower piece's ⅛" shortfall against the wall, where it vanishes; the seam between pieces can go wherever you like — the ply below is continuous, so it's purely cosmetic. About 4 screws per piece at corners/edges, 1¼", countersunk dead flush (a hair-proud head will scratch every project that slides over it). No glue.
+Hardboard pieces (24 × 48 and 23⅞ × 12) smooth side up. Put the narrower piece's ⅛" shortfall against the wall, where it vanishes; the seam between pieces can go wherever you like — the ply below is continuous, so it's purely cosmetic. About 4 screws per piece at corners/edges, 1¼", dead flush (a hair-proud head will scratch every project that slides over it). The hardboard routine: pilot with the ⅛" bit, then chamfer the hole's mouth with the 3/8" twist bit spun in reverse — essential in thin hardboard, where a forward-spinning big bit grabs and tears. Stop the moment a faint ring forms, then drive flush. No glue.
 
 **Why this layer exists:** it's the designated victim. Cuts, paint, solder burns all land here; in a few years, back out the screws and drop in your 23⅞ × 35⅞ leftover blank or a fresh $11 panel.
 

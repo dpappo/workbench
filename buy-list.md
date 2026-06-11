@@ -35,6 +35,7 @@ Shopping list for the stud-anchored workbench. ~~Struck-through~~ items are alre
 | ~~½" socket + ratchet wrench~~ | — | **Have** — hand-driving the 12 lags with the ratchet (no drill adapter needed); slower but better feel for "washer seated, stop" |
 | ~~7/32" twist bit~~ | — | **Have** |
 | ~~⅛" twist bit~~ | — | **Have** |
+| 3/8" twist bit | — | Check your bit set — most include one. Spun **in reverse** at the mouth of a pilot hole, it chamfers a clean screw-head recess (the no-countersink trick used in Steps 22–24) |
 | ~~Countersink bit~~ | — | **Skipping** — using the twist-bit trick instead: pilot with the ⅛" bit, then chamfer the hole mouth with a 3/8" twist bit spun **in reverse** (light pressure — reverse scrapes a clean cone without grabbing). If you ever want the real tool: [RYOBI SpeedLoad+ 5-pc set, $29.98](https://homedepot.ca/en/home/p.power-groove-countersink-set-5-piece.1000546924.html), use the #8 |
 | ~~Tape measure~~ | — | **Have** |
 | Pencil | ~$1 | |
