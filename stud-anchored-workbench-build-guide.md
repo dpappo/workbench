@@ -24,16 +24,16 @@ Most workbenches are freestanding tables: four legs, with all the stability comi
 
 | Item | Qty | Unit | Total |
 |------|-----|------|-------|
-| 2×4×8 SPF stud | 10 | $3.78 | $37.80 |
-| ¾" 4×8 standard spruce plywood | 1 | $59.98 | $59.98 |
-| ⅛" 48"×48" hardboard panel | 1 | $10.89 | $10.89 |
-| Paulin 5/16" × 4" hex lag bolts, zinc | 12 | $1.18 | $14.16 |
+| [2×4×8 SPF stud](https://www.homedepot.ca/product/-2x4-8-e-p-s-bois-de-construction/1000112108) | 10 | $3.78 | $37.80 |
+| [¾" 4×8 standard spruce plywood](https://www.homedepot.ca/product/1000401027) | 1 | $59.98 | $59.98 |
+| [⅛" 48"×48" hardboard panel](https://www.homedepot.ca/product/cutler-group-hardboard-panel-1-8-inch-x-48-inches-x-48-inches/1000132235) | 1 | $10.89 | $10.89 |
+| [Paulin 5/16" × 4" hex lag bolts, zinc](https://www.homedepot.ca/product/paulin-5-16-x-4-inch-hex-head-lag-bolt-zinc-plated/1000136736) | 12 | $1.18 | $14.16 |
 | 5/16" flat washers (one under every lag head) | 12 | ~$0.25 | ~$3.00 |
-| PaulinPRO #8 × 2½" screws, 150 pc | 1 | $25.88 | $25.88 |
-| Paulin #8 × 1¼" construction screws, 100 pc | 1 | $9.48 | $9.48 |
-| Kreg 2½" coarse Blue-Kote pocket screws, 50 ct | 1 | $11.99 | $11.99 |
+| [PaulinPRO #8 × 2½" screws, 150 pc](https://www.homedepot.ca/product/profast-8-x-2-1-2-inch-pro-deck-screws-in-brown-150-piece-/1001109918) | 1 | $25.88 | $25.88 |
+| [Paulin #8 × 1¼" construction screws, 100 pc](https://www.homedepot.ca/product/paulin--8-x-1-1-4-inch-flat-head-square-drive-construction-screws-in-yellow-zinc-100pcs/1000684323) | 1 | $9.48 | $9.48 |
+| [Kreg 2½" coarse Blue-Kote pocket screws, 50 ct](https://www.homedepot.ca/product/kreg-tool-company-2-1-2-inch-64-mm-coarse-thread-blue-kote-pocket-hole-screws-50-ct-/1001490327) | 1 | $11.99 | $11.99 |
 | **Bench subtotal** | | | **$173.18** |
-| Fibrex 4×8 white pegboard | 1 | $43.98 | $43.98 |
+| [Fibrex 4×8 white pegboard](https://www.homedepot.ca/product/fibrex-5-5mm-48-inch-x96-inch-white-hdf-hardboard-pegboard/1000428749) | 1 | $43.98 | $43.98 |
 | **Total** | | | **~$217** |
 
 ### Why three screw types?
@@ -50,11 +50,11 @@ The 2½" screws join 1½"-thick wood face-to-face: through one board, an inch of
 
 ## Tools
 
-- **RYOBI 18V drill/driver + impact driver combo** — $138. The drill spins smoothly (use for holes); the impact driver hammers as it spins (use for screws and lags — easier on your wrist). Add a ½" socket on a ¼"-hex adapter (a few dollars) so the impact can grip lag heads.
-- **A circular saw:** 7¼" RYOBI, $198, or the 5½" kit, $98 with battery — both handle every cut here.
-- **Empire 7" rafter square** — $11.98: draws perfect 90° lines and guides the saw.
-- **Empire 48" level** — $59.98 (any 24"+ level works). "Level" = truly horizontal — which beats "same height off the floor," because garage floors slope.
-- **Kreg 320 pocket-hole jig** — $48.97: drills the guided angled holes for all joist and kicker joints. Set it to 1½" material, and set the collar on its stepped bit to match.
+- **[RYOBI 18V drill/driver + impact driver combo](https://www.homedepot.ca/product/ryobi-one-18v-2-tool-combo-kit-with-drill-driver-impact-driver-2-1-5-ah-batteries-and-charger/1001663115)** — $138. The drill spins smoothly (use for holes); the impact driver hammers as it spins (use for screws and lags — easier on your wrist). Add a ½" socket on a ¼"-hex adapter (a few dollars) so the impact can grip lag heads.
+- **A circular saw:** [7¼" RYOBI, $198](https://www.homedepot.ca/product/ryobi-one-hp-18v-brushless-cordless-7-1-4-in-circular-saw-tool-only-/1001921518), or the [5½" kit, $98 with battery](https://www.homedepot.ca/product/ryobi-18v-one-lithium-ion-cordless-5-1-2-inch-circular-saw-kit-with-4-0-ah-battery-and-charger/1001688506) — both handle every cut here.
+- **[Empire 7" rafter square](https://www.homedepot.ca/product/empire-7-inch-laser-etched-aluminum-rafter-square/1000847630)** — $11.98: draws perfect 90° lines and guides the saw.
+- **[Empire 48" level](https://www.homedepot.ca/product/empire-48-inch-box-level/1000836114)** — $59.98 (any 24"+ level works). "Level" = truly horizontal — which beats "same height off the floor," because garage floors slope.
+- **[Kreg 320 pocket-hole jig](https://www.homedepot.ca/product/kreg-tool-company-pocket-hole-jig-320/1001491607)** — $48.97: drills the guided angled holes for all joist and kicker joints. Set it to 1½" material, and set the collar on its stepped bit to match.
 - 7/32" twist bit (lag pilot holes), ⅛" twist bit (near-end pilots), countersink bit (cones the surface so screw heads sit flush or below), tape, pencil, safety glasses, hearing protection.
 
 ---
