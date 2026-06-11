@@ -20,7 +20,7 @@ Most workbenches are freestanding tables: four legs, with all the stability comi
 
 ---
 
-## Buy list — ~$205 total (~$161 without pegboard)
+## Buy list — ~$217 total (~$173 without pegboard)
 
 | Item | Qty | Unit | Total |
 |------|-----|------|-------|
@@ -30,13 +30,16 @@ Most workbenches are freestanding tables: four legs, with all the stability comi
 | Paulin 5/16" × 4" hex lag bolts, zinc + 5/16" washers (~$3) | 12 | $1.18 | $17.16 |
 | PaulinPRO #8 × 2½" screws, 150 pc | 1 | $25.88 | $25.88 |
 | Paulin #8 × 1¼" construction screws, 100 pc | 1 | $9.48 | $9.48 |
-| **Bench subtotal** | | | **$161.19** |
+| Kreg 2½" coarse Blue-Kote pocket screws, 50 ct | 1 | $11.99 | $11.99 |
+| **Bench subtotal** | | | **$173.18** |
 | Fibrex 4×8 white pegboard | 1 | $43.98 | $43.98 |
-| **Total** | | | **~$205** |
+| **Total** | | | **~$217** |
 
-### Why two screw sizes?
+### Why three screw types?
 
-The 2½" screws join 1½"-thick wood to wood: through one board, an inch of bite into the next. The 1¼" screws attach sheets (ply-to-ply, hardboard, pegboard). The rule that explains all the fastener choices below: **a screw must pass completely through the first piece and bite at least ~1" into the second.** Wherever the first piece is a doubled (3") member, a 2½" screw can't get through — those joints get 4" lag bolts (thick hex-headed screws driven with a socket, washer under the head to spread the clamping force) or toe-screws (screws driven at ~45° through the side of one board into the other — you'll learn this in Step 7).
+The 2½" screws join 1½"-thick wood face-to-face: through one board, an inch of bite into the next. The 1¼" screws attach sheets (ply-to-ply, hardboard, pegboard). The Kreg pocket screws make the angled end-to-face joints. The rule that explains all the fastener choices below: **a screw must pass completely through the first piece and bite at least ~1" into the second.**
+
+**The angled joints.** Wherever a board's end meets another board's face — joist into ledger, kicker tail into stud — a straight screw has nothing to grab. This build uses **pocket holes**: the Kreg jig drills a guided, angled channel into the board's side, and a 2½" pocket screw drives through it into the wood behind. Foolproof angle, no splitting, and you drill every pocket comfortably at the bench before assembly. Two joints (the rail ends and the optional post) instead use **toe-screws** — the freehand version of the same idea, taught in Step 8. And wherever the first piece is a doubled (3") member, the joint gets a 4" lag bolt (thick hex-headed screw driven with a socket, washer under the head to spread the clamping force).
 
 **At the lumber rack:** sight down each stud's long edge like a rifle barrel; reject any that curve ("bow") or corkscrew ("twist"). Ten minutes of picking saves the whole day.
 
@@ -48,6 +51,7 @@ The 2½" screws join 1½"-thick wood to wood: through one board, an inch of bite
 - **A circular saw:** 7¼" RYOBI, $198, or the 5½" kit, $98 with battery — both handle every cut here.
 - **Empire 7" rafter square** — $11.98: draws perfect 90° lines and guides the saw.
 - **Empire 48" level** — $59.98 (any 24"+ level works). "Level" = truly horizontal — which beats "same height off the floor," because garage floors slope.
+- **Kreg 320 pocket-hole jig** — $48.97: drills the guided angled holes for all joist and kicker joints. Set it to 1½" material, and set the collar on its stepped bit to match.
 - 7/32" twist bit (lag pilot holes), countersink bit (cones the surface so screw heads sit flush or below), tape, pencil, safety glasses, hearing protection.
 
 ---
@@ -86,6 +90,8 @@ Offcuts feed the next cuts — verified to work even with 92⅝" studs:
 6. **Stud 10** stays whole — insurance against a miscut or hidden flaw.
 
 Measure each offcut before cutting from it.
+
+**Then drill the pocket holes — while every piece is still loose on the bench.** Jig set to 1½" material. Drill two pockets in each end of all six 19½" top joists (both on the same wide face), two in each end of the three 10½" shelf joists (on the underside face, since they lie flat), and two near the wall end of each 21" kicker (on the inner face). That's 40 pockets, ten minutes of repetitive work — and it converts the most awkward fastening of the whole build into easy guided driving.
 
 **Plywood sequence:**
 
@@ -151,9 +157,7 @@ Stand the goalpost out from the wall so the gap between ledger front face and be
 
 Before fastening anything, hold each kicker in place (on edge, against the leg's inner face, running back to the wall) and look at what its tail lands on. A stud there? Great — that side needs no block. Bare bay — and at least one side will be, since the kicker positions don't match the 16" stud rhythm? Install the block first: a 16" 2×4 flat against the wall at kicker height, spanning the two nearest studs, two 2½" screws into each.
 
-Now set each kicker for real. Height comes from the level, not the floor: hold the level across from the cleat's bottom edge (the 8½" reference, already leveled in Step 1) and mark the leg — the kicker's top edge goes on that mark. Screw the kicker to the leg with three 2½" screws (through the 1½" kicker into the leg), then fasten its tail with two toe-screws — straight into the stud on the bare side, into the block on the blocked side. On the blocked side the kicker's tail butts the block rather than the wall, sitting 1½" prouder than its twin — expected, and it changes nothing.
-
-**Toe-screwing, your new skill:** start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the board's side into the wood behind. It feels wrong the first time and works every time.
+Now set each kicker for real. Height comes from the level, not the floor: hold the level across from the cleat's bottom edge (the 8½" reference, already leveled in Step 1) and mark the leg — the kicker's top edge goes on that mark. Screw the kicker to the leg with three 2½" screws (through the 1½" kicker into the leg), then fasten its tail through the two pocket holes you drilled at cutting time — a 2½" pocket screw in each, into the stud on the bare side, into the block on the blocked side. The jig already set the angle; just seat the long square bit in the pocket and drive until snug. On the blocked side the kicker's tail butts the block rather than the wall, sitting 1½" prouder than its twin — expected, and it changes nothing. (Forgot a pocket? Clamp the jig on in place, or fall back on a toe-screw — taught next step.)
 
 *(Belt-and-suspenders note: Step 10's shelf deck will also tie the legs to the wall through the cleat — but solid wood at both ends of the kicker is how you build a bench you never think about again.)*
 
@@ -161,19 +165,25 @@ Now set each kicker for real. Height comes from the level, not the floor: hold t
 
 ### Step 8 — Set the shelf rail
 
-Rest the doubled rail across the two kickers (its ends sit on them; top of rail lands at 12", matching the cleat line — check with the level). Flush its ends with the frame's outside edges, then toe-screw down into each kicker, two screws per end. If you want the optional centre post, measure the actual gap from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope — cut the post to that length, stand it, and toe-screw it top and bottom. Cheap insurance against sag when the shelf is loaded.
+Rest the doubled rail across the two kickers (its ends sit on them; top of rail lands at 12", matching the cleat line — check with the level). Flush its ends with the frame's outside edges, then toe-screw down into each kicker, two 2½" screws per end. The rail is a doubled 3" member, so the pocket jig — set up for 1½" stock — sits this joint out: this is your one freehand angled joint of the build.
+
+**Toe-screwing, the manual version of a pocket screw:** start the screw straight-in for a few turns so it bites, then tilt to ~45° and drive it through the rail's side down into the kicker. It feels wrong the first time and works every time — and after forty guided pocket screws, your hands will already know the angle.
+
+If you want the optional centre post, measure the actual gap from the floor to the rail's underside at its midpoint — don't assume 8½"; floors slope — cut the post to that length, stand it, and toe-screw it top and bottom. Cheap insurance against sag when the shelf is loaded.
 
 Note the rail floats 9" back from the bench front — that's your knee room, by design.
 
 ### Step 9 — Install the top joists
 
-Six 19½" joists on edge between ledger and beam, tops flush with both. Position matters: keep the two outer joists about 4" in from the bench ends (the leg tops occupy the outermost corners — this is why they can't go fully to the ends), then space the rest evenly, no gap wider than ~12", with one directly under the 3D printer's future corner. Fasten every joist end with two 2½" toe-screws — at the wall side into the ledger, at the front into the beam. Then re-measure both diagonals as a confirmation — they were set square in Step 6, and the toe-screws shouldn't have moved them.
+Six 19½" joists on edge between ledger and beam, tops flush with both. Position matters: keep the two outer joists about 4" in from the bench ends (the leg tops occupy the outermost corners — this is why they can't go fully to the ends), then space the rest evenly, no gap wider than ~12", with one directly under the 3D printer's future corner. Two more placement rules at the wall: never set a joist over a protruding lag head — slide it an inch either way into clear wood — and keep pocket screws aimed clear of the lags buried in the ledger.
+
+Fasten every joist end through its two pre-drilled pocket holes with 2½" pocket screws — the wall end drives into the ledger, the front end into the beam, so each joist is held at both ends by four screws. This is the joint pocket holes were invented for: the cramped wall-side fastening becomes two easy guided screws. Then re-measure both diagonals as a confirmation — they were set square in Step 6, and the screws shouldn't have moved them.
 
 **What you built:** the complete skeleton. Push down anywhere — nothing should move.
 
 ### Step 10 — Frame and deck the shelf
 
-Three 10½" shelf joists lie flat between the cleat and the rail's back face, tops flush at 12": one near each end, the third at 35⅞" from the left — exactly under where the shelf deck's seam will land (a seam always needs wood beneath it). Two toe-screws per end. Drop on the 15 × 35⅞ and 15 × 24⅛ ply pieces, seam over that joist, and screw down with 1¼" screws every ~8" into cleat, joists, and rail.
+Three 10½" shelf joists lie flat between the cleat and the rail's back face, tops flush at 12": one near each end, the third at 35⅞" from the left — exactly under where the shelf deck's seam will land (a seam always needs wood beneath it). Fasten each end through its two pre-drilled pocket holes — 2½" pocket screws into the cleat at the back, the rail at the front; the pockets sit on the underside face, so the screws drive upward-angled and invisible. Drop on the 15 × 35⅞ and 15 × 24⅛ ply pieces, seam over that joist, and screw down with 1¼" screws every ~8" into cleat, joists, and rail.
 
 **Why this little shelf matters structurally:** an open frame can lean into a parallelogram ("racking"); skin it with a screwed-down panel and it geometrically can't. Engineers call the panel a diaphragm. You just built one connecting legs, wall, and rail.
 
