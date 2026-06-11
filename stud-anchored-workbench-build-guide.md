@@ -192,7 +192,7 @@ Three 10½" shelf joists lie flat between the cleat and the rail's back face, to
 
 ### Step 11 — Top, bottom layer
 
-The 23⅞" × 60" ply goes down first, flush to the wall; its front edge sits ⅛" shy of the beam's face — correct, and about to be hidden. Screw with 2½" screws, countersunk (drive the head slightly below the surface — the cone-shaped countersink bit helps, though these screws mostly self-seat): two per joist, plus one every ~12" along the ledger and beam edges.
+The 23⅞" × 60" ply goes down first, flush to the wall; its front edge sits ⅛" shy of the beam's face — correct, and about to be hidden. Screw with 2½" screws, countersunk (head slightly below the surface): two per joist, plus one every ~12" along the ledger and beam edges. These screws mostly self-seat in spruce ply — drive firmly and fingertip-check each head. Any head sitting proud: kiss the hole with the 3/8" twist bit spun in reverse (light pressure — reverse scrapes a clean cone without grabbing) and re-drive.
 
 **Why heads must sit below flush:** the next layer has to lie dead flat on this one — one proud head and the top rocks on it.
 
