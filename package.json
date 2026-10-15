@@ -1,0 +1,11 @@
+{
+  "name": "workbench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "readme-media": "node scripts/readme-media.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}
