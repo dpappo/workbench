@@ -2,9 +2,9 @@
 
 # Stud-Anchored Workbench
 
-**A garage workbench that hangs off the wall studs.<br>No rear legs, no glue, about $216 in materials.**
+**A garage workbench that hangs off the wall studs.<br>No rear legs, no glue.**
 
-Designed with [Claude Code](https://claude.com/claude-code), with an interactive 3D guide that walks you through every cut and every screw.
+An interactive 3D guide walks you through every cut and every screw.
 
 ### [Open the 3D build guide&nbsp;&nbsp;→](https://dpappo.github.io/workbench/)
 
